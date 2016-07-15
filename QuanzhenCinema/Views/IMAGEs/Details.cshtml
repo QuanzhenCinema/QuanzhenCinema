@@ -1,0 +1,50 @@
+﻿@model QuanzhenCinema.Models.IMAGE
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>IMAGE</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MOVIE.NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MOVIE.NAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IMAGE_PATH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IMAGE_PATH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WIDTH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WIDTH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HEIGHT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HEIGHT)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IMAGE_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,66 @@
+﻿@model QuanzhenCinema.Models.SCHEDULE
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>SCHEDULE</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DISPLAY.LANGUAGE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DISPLAY.LANGUAGE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HALL.HALL_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HALL.HALL_ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.START_TIME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.START_TIME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.END_TIME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.END_TIME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DAY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DAY)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ORIGINAL_PRICE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ORIGINAL_PRICE)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.SCHEDULE_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

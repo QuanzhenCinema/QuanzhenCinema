@@ -1,0 +1,50 @@
+﻿@model QuanzhenCinema.Models.MEMBER
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>MEMBER</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.REGISTER_DATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.REGISTER_DATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.REMAINING_DAY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.REMAINING_DAY)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CREDIT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CREDIT)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PHONE_NUMBER }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

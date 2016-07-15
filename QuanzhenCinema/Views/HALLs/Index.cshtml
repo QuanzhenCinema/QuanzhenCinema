@@ -1,0 +1,51 @@
+﻿@model IEnumerable<QuanzhenCinema.Models.HALL>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CAPACITY)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IS_3D)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IS_DOLAB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IS_IMAX)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CAPACITY)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IS_3D)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IS_DOLAB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IS_IMAX)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.HALL_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.HALL_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.HALL_ID })
+        </td>
+    </tr>
+}
+
+</table>

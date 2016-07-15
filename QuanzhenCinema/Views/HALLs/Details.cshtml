@@ -1,0 +1,50 @@
+﻿@model QuanzhenCinema.Models.HALL
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>HALL</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CAPACITY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CAPACITY)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IS_3D)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IS_3D)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IS_DOLAB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IS_DOLAB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IS_IMAX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IS_IMAX)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.HALL_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

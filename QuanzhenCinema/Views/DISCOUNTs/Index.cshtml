@@ -1,0 +1,57 @@
+﻿@model IEnumerable<QuanzhenCinema.Models.DISCOUNT>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NUM)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.START_DATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.REMAINING_DAY)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WEEKDAY)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.RATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NUM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.START_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.REMAINING_DAY)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WEEKDAY)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.DISCOUNT_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.DISCOUNT_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.DISCOUNT_ID })
+        </td>
+    </tr>
+}
+
+</table>

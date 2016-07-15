@@ -1,0 +1,56 @@
+﻿@model QuanzhenCinema.Models.HALL
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>HALL</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CAPACITY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CAPACITY)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IS_3D)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IS_3D)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IS_DOLAB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IS_DOLAB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IS_IMAX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IS_IMAX)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
