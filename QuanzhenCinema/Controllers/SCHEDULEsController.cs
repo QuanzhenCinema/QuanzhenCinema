@@ -39,7 +39,7 @@ namespace QuanzhenCinema.Controllers
         // GET: SCHEDULEs/Create
         public ActionResult Create()
         {
-            ViewBag.DISPLAY_ID = new SelectList(db.DISPLAY, "DISPLAY_ID", "LANGUAGE");
+            ViewBag.DISPLAY_ID = new SelectList(db.DISPLAY, "DISPLAY_ID", "DISPLAY_ID");
             ViewBag.HALL_ID = new SelectList(db.HALL, "HALL_ID", "HALL_ID");
             return View();
         }
@@ -49,7 +49,7 @@ namespace QuanzhenCinema.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "SCHEDULE_ID,DISPLAY_ID,START_TIME,END_TIME,DAY,HALL_ID,ORIGINAL_PRICE")] SCHEDULE sCHEDULE)
+        public ActionResult Create([Bind(Include = "SCHEDULE_ID,DISPLAY_ID,DAY,HALL_ID,ORIGINAL_PRICE,START_TIME,END_TIME,END_SLOT,START_SLOT")] SCHEDULE sCHEDULE)
         {
             if (ModelState.IsValid)
             {
@@ -58,7 +58,7 @@ namespace QuanzhenCinema.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.DISPLAY_ID = new SelectList(db.DISPLAY, "DISPLAY_ID", "LANGUAGE", sCHEDULE.DISPLAY_ID);
+            ViewBag.DISPLAY_ID = new SelectList(db.DISPLAY, "DISPLAY_ID", "DISPLAY_ID", sCHEDULE.DISPLAY_ID);
             ViewBag.HALL_ID = new SelectList(db.HALL, "HALL_ID", "HALL_ID", sCHEDULE.HALL_ID);
             return View(sCHEDULE);
         }
@@ -75,7 +75,7 @@ namespace QuanzhenCinema.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.DISPLAY_ID = new SelectList(db.DISPLAY, "DISPLAY_ID", "LANGUAGE", sCHEDULE.DISPLAY_ID);
+            ViewBag.DISPLAY_ID = new SelectList(db.DISPLAY, "DISPLAY_ID", "DISPLAY_ID", sCHEDULE.DISPLAY_ID);
             ViewBag.HALL_ID = new SelectList(db.HALL, "HALL_ID", "HALL_ID", sCHEDULE.HALL_ID);
             return View(sCHEDULE);
         }
@@ -85,7 +85,7 @@ namespace QuanzhenCinema.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "SCHEDULE_ID,DISPLAY_ID,START_TIME,END_TIME,DAY,HALL_ID,ORIGINAL_PRICE")] SCHEDULE sCHEDULE)
+        public ActionResult Edit([Bind(Include = "SCHEDULE_ID,DISPLAY_ID,DAY,HALL_ID,ORIGINAL_PRICE,START_TIME,END_TIME,END_SLOT,START_SLOT")] SCHEDULE sCHEDULE)
         {
             if (ModelState.IsValid)
             {
@@ -93,7 +93,7 @@ namespace QuanzhenCinema.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.DISPLAY_ID = new SelectList(db.DISPLAY, "DISPLAY_ID", "LANGUAGE", sCHEDULE.DISPLAY_ID);
+            ViewBag.DISPLAY_ID = new SelectList(db.DISPLAY, "DISPLAY_ID", "DISPLAY_ID", sCHEDULE.DISPLAY_ID);
             ViewBag.HALL_ID = new SelectList(db.HALL, "HALL_ID", "HALL_ID", sCHEDULE.HALL_ID);
             return View(sCHEDULE);
         }
