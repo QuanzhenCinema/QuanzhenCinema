@@ -138,7 +138,9 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Business\ClassPackage.cs" />
     <Compile Include="Business\Schedule_Movie.cs" />
+    <Compile Include="Controllers\CATEGORies1Controller.cs" />
     <Compile Include="Controllers\CATEGORiesController.cs" />
     <Compile Include="Controllers\DISCOUNTsController.cs" />
     <Compile Include="Controllers\DISPLAYsController.cs" />
@@ -285,6 +287,12 @@
     <Content Include="Views\SCHEDULEs\Details.cshtml" />
     <Content Include="Views\SCHEDULEs\Edit.cshtml" />
     <Content Include="Views\SCHEDULEs\Index.cshtml" />
+    <Content Include="Views\Schedule_Movie\Info.cshtml" />
+    <Content Include="Views\CATEGORies1\Create.cshtml" />
+    <Content Include="Views\CATEGORies1\Delete.cshtml" />
+    <Content Include="Views\CATEGORies1\Details.cshtml" />
+    <Content Include="Views\CATEGORies1\Edit.cshtml" />
+    <Content Include="Views\CATEGORies1\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -7,23 +7,20 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using QuanzhenCinema.Models;
-using System.Web.Script.Serialization;
 
 namespace QuanzhenCinema.Controllers
 {
-    public class CATEGORiesController : Controller
+    public class CATEGORies1Controller : Controller
     {
         private Quanzhen db = new Quanzhen();
 
-        // GET: CATEGORies
+        // GET: CATEGORies1
         public ActionResult Index()
         {
             return View(db.CATEGORY.ToList());
         }
 
-
-
-        // GET: CATEGORies/Details/5
+        // GET: CATEGORies1/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -38,13 +35,13 @@ namespace QuanzhenCinema.Controllers
             return View(cATEGORY);
         }
 
-        // GET: CATEGORies/Create
+        // GET: CATEGORies1/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: CATEGORies/Create
+        // POST: CATEGORies1/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -61,7 +58,7 @@ namespace QuanzhenCinema.Controllers
             return View(cATEGORY);
         }
 
-        // GET: CATEGORies/Edit/5
+        // GET: CATEGORies1/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -76,7 +73,7 @@ namespace QuanzhenCinema.Controllers
             return View(cATEGORY);
         }
 
-        // POST: CATEGORies/Edit/5
+        // POST: CATEGORies1/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -92,7 +89,7 @@ namespace QuanzhenCinema.Controllers
             return View(cATEGORY);
         }
 
-        // GET: CATEGORies/Delete/5
+        // GET: CATEGORies1/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -107,7 +104,7 @@ namespace QuanzhenCinema.Controllers
             return View(cATEGORY);
         }
 
-        // POST: CATEGORies/Delete/5
+        // POST: CATEGORies1/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

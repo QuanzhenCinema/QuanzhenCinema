@@ -7,82 +7,69 @@ using QuanzhenCinema.Models;
 
 namespace QuanzhenCinema.Business
 {
-    public class Schedule_Movie{
-        Quanzhen db;
-        String now;
-        List<List<DISPLAY>> dis;
-        public List<List<MOVIE>> mov;
-        List<List<String>> movie_name;
-        
-        public Schedule_Movie(){
-            db = new Quanzhen();
+    public class DisplayMovieName_ViewModel
+    {
+        public int DISPLAY_ID { get; set; }
+        public int MOVIE_ID { get; set; }
+        public int IS_3D { get; set; }
+        public int IS_IMAX { get; set; }
+        public string LANGUAGE { get; set; }
+        public int LOWEST_PRICE { get; set; }
+        public int LENGTH { get; set; }
+        public string Name { get; set; }
+    }
 
+    public class SCHEDULE_ViewModel
+    {
+        public int SCHEDULE_ID { get; set; }
+        public int DISPLAY_ID { get; set; }
+        public int DAY { get; set; }
+        public int HALL_ID { get; set; }
+        public int ORIGINAL_PRICE { get; set; }
+        public DateTime? START_TIME { get; set; }
+        public DateTime? END_TIME { get; set; }
+    }
+
+    public class HALL_ViewModel
+    {
+        public int HALL_ID { get; set; }
+        public int CAPACITY { get; set; }
+        public int IS_3D { get; set; }
+        public int IS_DOLAB { get; set; }
+        public int IS_IMAX { get; set; }
+    }
+
+    public class Schedule_Movie
+    {
+        Quanzhen db;
+        DateTime dt;
+
+        public Schedule_Movie(DateTime d)
+        {
+            db = new Quanzhen();
+            dt = d;
             movie();
         }
-        public void movie(){
-            mov = new List<List<MOVIE>>();
-
-            for (int i = 0; i < 7; i++){
-                now = DateTime.Now.ToLocalTime().AddDays(i + 1).ToString();
-                mov.Add(db.MOVIE.ToList());
-                int count = mov[i].Count;
-                for (int j = 0; j < count; j++){
-                    if (mov[i][j].EXPIRE_DATE.ToString().CompareTo(now) < 0){
-                        mov[i].RemoveAt(j);
-                        j--;
-                        count--;
-                    }
-                }
-            }
+        public List<DisplayMovieName_ViewModel> movie()
+        {
+            String sql = "select display_id,movie_id,is_3d,is_imax,language,lowest_price,length,name from display natural join movie  where expire_date > to_date('" + dt.Year + "-" + dt.Month + "-" + dt.Day + "','YYYY-MM-DD')";
+            List<DisplayMovieName_ViewModel> display_moviename = db.Database.SqlQuery<DisplayMovieName_ViewModel>(sql).ToList();
+            return display_moviename;
         }
 
-        public List<List<DISPLAY>> Display(){
-            dis = new List<List<DISPLAY>>();
-            for (int i = 0; i < 7; i++){
-                dis.Add(new List<DISPLAY>());
-                for (int j = 0; j < mov[i].Count; j++){
-                    for (int k = 0; k < db.DISPLAY.ToList().Count; k++){
-                        if (mov[i][j].MOVIE_ID == db.DISPLAY.ToList()[k].MOVIE_ID){
-                            dis[i].Add(db.DISPLAY.ToList()[k]);
-                        }
-                    }
-                }
-            }
-            for(int i = 0; i < 7; i++){
-                for(int j = 0; j < dis[i].Count; j++){
-                    if (dis[i][j].LENGTH >= 30){
-                        if (dis[i][j].LENGTH % 15 == 0){
-                            dis[i][j].LENGTH /= 15;
-                        } else {
-                            dis[i][j].LENGTH /= 15;
-                            dis[i][j].LENGTH++;
-                        }
-                    }
-                }
-            }
-
-            return dis;
+        public List<SCHEDULE_ViewModel> schedule()
+        {
+            DateTime temp = dt.AddDays(1);
+            String sql = "select * from schedule where start_time > to_date('" + dt.Year + '-' + dt.Month + '-' + dt.Day + "','YYYY-MM-DD') and end_time < to_date('" + temp.Year + '-' + temp.Month + '-' + temp.Day + "','YYYY-MM-DD')";
+            List<SCHEDULE_ViewModel> s = db.Database.SqlQuery<SCHEDULE_ViewModel>(sql).ToList();
+            return s;
         }
 
-        public List<List<String>> m_name(){
-            movie_name = new List<List<String>>();
-
-            for(int i = 0; i < 7; i++){
-                movie_name.Add(new List<String>());
-                for(int j = 0; j < dis[i].Count; j++){
-                    for(int k = 0; k < db.MOVIE.ToList().Count; k++){
-                        if(db.MOVIE.ToList()[k].MOVIE_ID == dis[i][j].MOVIE_ID){
-                            movie_name[i].Add(db.MOVIE.ToList()[k].NAME);
-                        }
-                    }
-                }
-            }
-
-            return movie_name;
-        }
-
-        public List<HALL> Hall() {
-            return db.HALL.ToList();
+        public List<HALL_ViewModel> Hall()
+        {
+            String sql = "select * from hall";
+            List<HALL_ViewModel> s = db.Database.SqlQuery<HALL_ViewModel>(sql).ToList();
+            return s.ToList();
         }
     }
 }
