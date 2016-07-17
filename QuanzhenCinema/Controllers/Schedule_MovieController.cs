@@ -13,6 +13,12 @@ namespace QuanzhenCinema.Controllers
     {
         // GET: Schedule_Movie
         Quanzhen db = new Quanzhen();
+
+        public ActionResult Index()
+        {
+            return View();
+        }
+
         public String Info(int Year, int Month, int Day)
         {
             //db.Configuration.ProxyCreationEnabled = false;
