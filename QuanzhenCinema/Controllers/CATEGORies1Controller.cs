@@ -10,116 +10,107 @@ using QuanzhenCinema.Models;
 
 namespace QuanzhenCinema.Controllers
 {
-    public class SCHEDULEsController : Controller
+    public class CATEGORies1Controller : Controller
     {
         private Quanzhen db = new Quanzhen();
 
-        // GET: SCHEDULEs
+        // GET: CATEGORies1
         public ActionResult Index()
         {
-            var sCHEDULE = db.SCHEDULE.Include(s => s.DISPLAY).Include(s => s.HALL);
-            return View(sCHEDULE.ToList());
+            return View(db.CATEGORY.ToList());
         }
 
-        // GET: SCHEDULEs/Details/5
+        // GET: CATEGORies1/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            SCHEDULE sCHEDULE = db.SCHEDULE.Find(id);
-            if (sCHEDULE == null)
+            CATEGORY cATEGORY = db.CATEGORY.Find(id);
+            if (cATEGORY == null)
             {
                 return HttpNotFound();
             }
-            return View(sCHEDULE);
+            return View(cATEGORY);
         }
 
-        // GET: SCHEDULEs/Create
+        // GET: CATEGORies1/Create
         public ActionResult Create()
         {
-            ViewBag.DISPLAY_ID = new SelectList(db.DISPLAY, "DISPLAY_ID", "DISPLAY_ID");
-            ViewBag.HALL_ID = new SelectList(db.HALL, "HALL_ID", "HALL_ID");
             return View();
         }
 
-        // POST: SCHEDULEs/Create
+        // POST: CATEGORies1/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "SCHEDULE_ID,DISPLAY_ID,DAY,HALL_ID,ORIGINAL_PRICE,START_TIME,END_TIME,END_SLOT,START_SLOT")] SCHEDULE sCHEDULE)
+        public ActionResult Create([Bind(Include = "CATEGORY_ID,CATEGORY_NAME")] CATEGORY cATEGORY)
         {
             if (ModelState.IsValid)
             {
-                db.SCHEDULE.Add(sCHEDULE);
+                db.CATEGORY.Add(cATEGORY);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.DISPLAY_ID = new SelectList(db.DISPLAY, "DISPLAY_ID", "DISPLAY_ID", sCHEDULE.DISPLAY_ID);
-            ViewBag.HALL_ID = new SelectList(db.HALL, "HALL_ID", "HALL_ID", sCHEDULE.HALL_ID);
-            return View(sCHEDULE);
+            return View(cATEGORY);
         }
 
-        // GET: SCHEDULEs/Edit/5
+        // GET: CATEGORies1/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            SCHEDULE sCHEDULE = db.SCHEDULE.Find(id);
-            if (sCHEDULE == null)
+            CATEGORY cATEGORY = db.CATEGORY.Find(id);
+            if (cATEGORY == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.DISPLAY_ID = new SelectList(db.DISPLAY, "DISPLAY_ID", "DISPLAY_ID", sCHEDULE.DISPLAY_ID);
-            ViewBag.HALL_ID = new SelectList(db.HALL, "HALL_ID", "HALL_ID", sCHEDULE.HALL_ID);
-            return View(sCHEDULE);
+            return View(cATEGORY);
         }
 
-        // POST: SCHEDULEs/Edit/5
+        // POST: CATEGORies1/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "SCHEDULE_ID,DISPLAY_ID,DAY,HALL_ID,ORIGINAL_PRICE,START_TIME,END_TIME,END_SLOT,START_SLOT")] SCHEDULE sCHEDULE)
+        public ActionResult Edit([Bind(Include = "CATEGORY_ID,CATEGORY_NAME")] CATEGORY cATEGORY)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(sCHEDULE).State = EntityState.Modified;
+                db.Entry(cATEGORY).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.DISPLAY_ID = new SelectList(db.DISPLAY, "DISPLAY_ID", "DISPLAY_ID", sCHEDULE.DISPLAY_ID);
-            ViewBag.HALL_ID = new SelectList(db.HALL, "HALL_ID", "HALL_ID", sCHEDULE.HALL_ID);
-            return View(sCHEDULE);
+            return View(cATEGORY);
         }
 
-        // GET: SCHEDULEs/Delete/5
+        // GET: CATEGORies1/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            SCHEDULE sCHEDULE = db.SCHEDULE.Find(id);
-            if (sCHEDULE == null)
+            CATEGORY cATEGORY = db.CATEGORY.Find(id);
+            if (cATEGORY == null)
             {
                 return HttpNotFound();
             }
-            return View(sCHEDULE);
+            return View(cATEGORY);
         }
 
-        // POST: SCHEDULEs/Delete/5
+        // POST: CATEGORies1/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            SCHEDULE sCHEDULE = db.SCHEDULE.Find(id);
-            db.SCHEDULE.Remove(sCHEDULE);
+            CATEGORY cATEGORY = db.CATEGORY.Find(id);
+            db.CATEGORY.Remove(cATEGORY);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

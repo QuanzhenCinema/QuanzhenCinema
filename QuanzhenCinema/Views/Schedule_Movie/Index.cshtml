@@ -3,8 +3,49 @@
 }
 
 <h2>Index</h2>
+
 @for (int i = 0; i < ViewBag.display[2].Count; i++)
 {
-    <li>@ViewBag.display[2][i].DISPLAY_ID</li>
-    <li>@ViewBag.movie_name[2][i]</li>
+    <li>Display_Id: @ViewBag.display[2][i].DISPLAY_ID</li>
+    <li>Length: @ViewBag.display[2][i].LENGTH</li>
+    <li>Movie_Name: @ViewBag.movie_name[2][i]</li>
 }
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="@Url.Content("~/Content/fullcalendar.min.css")" rel="stylesheet">
+    <link href="@Url.Content("~/Content/fullcalendar.print.css")" rel="stylesheet" media="print">
+    <link href="@Url.Content("~/Content/scheduler.min.css")" rel="stylesheet">
+    <script src="@Url.Content("~/Scripts/moment.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/fullcalendar.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/scheduler.min.js")"></script>
+    <script>
+    
+    </script>
+     <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+            font-size: 14px;
+        }
+
+        #calendar {
+            max-width: 900px;
+            margin: 50px auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="calendar">
+
+    </div>
+
+
+
+
+</body>
+</html>

@@ -21,15 +21,19 @@ namespace QuanzhenCinema.Models
 
         public int DISPLAY_ID { get; set; }
 
-        public DateTime START_TIME { get; set; }
-
-        public DateTime END_TIME { get; set; }
-
         public int DAY { get; set; }
 
         public int HALL_ID { get; set; }
 
         public int ORIGINAL_PRICE { get; set; }
+
+        public DateTime? START_TIME { get; set; }
+
+        public DateTime? END_TIME { get; set; }
+
+        public decimal? END_SLOT { get; set; }
+
+        public decimal? START_SLOT { get; set; }
 
         public virtual DISPLAY DISPLAY { get; set; }
 

@@ -138,7 +138,9 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Business\ClassPackage.cs" />
     <Compile Include="Business\Schedule_Movie.cs" />
+    <Compile Include="Controllers\CATEGORies1Controller.cs" />
     <Compile Include="Controllers\CATEGORiesController.cs" />
     <Compile Include="Controllers\DISCOUNTsController.cs" />
     <Compile Include="Controllers\DISPLAYsController.cs" />
@@ -185,16 +187,24 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Content\fullcalendar.min.css" />
+    <Content Include="Scripts\fullcalendar.min.js" />
+    <Content Include="Content\fullcalendar.print.css" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\moment.min.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Content\scheduler.min.css" />
+    <Content Include="Scripts\scheduler.min.js" />
+    <Content Include="Scripts\testscript.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -255,11 +265,6 @@
     <Content Include="Views\ORDERs\Details.cshtml" />
     <Content Include="Views\ORDERs\Edit.cshtml" />
     <Content Include="Views\ORDERs\Index.cshtml" />
-    <Content Include="Views\SCHEDULEs\Create.cshtml" />
-    <Content Include="Views\SCHEDULEs\Delete.cshtml" />
-    <Content Include="Views\SCHEDULEs\Details.cshtml" />
-    <Content Include="Views\SCHEDULEs\Edit.cshtml" />
-    <Content Include="Views\SCHEDULEs\Index.cshtml" />
     <Content Include="Views\SEATs\Create.cshtml" />
     <Content Include="Views\SEATs\Delete.cshtml" />
     <Content Include="Views\SEATs\Details.cshtml" />
@@ -275,6 +280,19 @@
     <Content Include="Views\STAFFs\Details.cshtml" />
     <Content Include="Views\STAFFs\Edit.cshtml" />
     <Content Include="Views\STAFFs\Index.cshtml" />
+    <Content Include="Views\Schedule_Movie\Index.cshtml" />
+    <Content Include="Views\Home\Test.cshtml" />
+    <Content Include="Views\SCHEDULEs\Create.cshtml" />
+    <Content Include="Views\SCHEDULEs\Delete.cshtml" />
+    <Content Include="Views\SCHEDULEs\Details.cshtml" />
+    <Content Include="Views\SCHEDULEs\Edit.cshtml" />
+    <Content Include="Views\SCHEDULEs\Index.cshtml" />
+    <Content Include="Views\Schedule_Movie\Info.cshtml" />
+    <Content Include="Views\CATEGORies1\Create.cshtml" />
+    <Content Include="Views\CATEGORies1\Delete.cshtml" />
+    <Content Include="Views\CATEGORies1\Details.cshtml" />
+    <Content Include="Views\CATEGORies1\Edit.cshtml" />
+    <Content Include="Views\CATEGORies1\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

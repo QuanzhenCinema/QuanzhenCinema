@@ -1,0 +1,10 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@for (int i = 0; i < ViewBag.display[2].Count; i++)
+{
+    <li>@ViewBag.display[2][i].DISPLAY_ID</li>
+    <li>@ViewBag.movie_name[2][i]</li>
+}
