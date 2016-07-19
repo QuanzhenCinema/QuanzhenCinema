@@ -1,0 +1,25 @@
+body {
+    background-color: #f3f3f3;
+    font-family: "Helvetica Neue","微软雅黑", Helvetica, Arial, sans-serif;
+}
+.jumbotron {
+    padding-top: 18px;
+    padding-bottom: 18px;
+}
+.jumbotron p {
+    margin-bottom: 15px;
+    font-size: 30px;
+    font-weight: 200;
+    margin-top: 30px;
+}
+.list-inline > li {
+    display: inline-block;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.lead {
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.8;
+}

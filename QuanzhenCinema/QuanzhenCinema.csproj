@@ -142,6 +142,7 @@
     <Compile Include="Business\Schedule_Movie.cs" />
     <Compile Include="Controllers\CATEGORies1Controller.cs" />
     <Compile Include="Controllers\CATEGORiesController.cs" />
+    <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\DISCOUNTsController.cs" />
     <Compile Include="Controllers\DISPLAYsController.cs" />
     <Compile Include="Controllers\HALLsController.cs" />
@@ -178,6 +179,7 @@
     <Compile Include="ViewModel\TestViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="1\developer.html" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -206,6 +208,7 @@
     <Content Include="Scripts\scheduler.min.js" />
     <Content Include="Scripts\testscript.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Views\Default\developer.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -293,9 +296,14 @@
     <Content Include="Views\CATEGORies1\Details.cshtml" />
     <Content Include="Views\CATEGORies1\Edit.cshtml" />
     <Content Include="Views\CATEGORies1\Index.cshtml" />
+    <Content Include="Views\Default\developer.cshtml" />
+    <Content Include="Views\Home\developer.cshtml" />
+    <Content Include="Views\Default\description.cshtml" />
+    <Content Include="Views\Default\login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\App_LocalResources\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
