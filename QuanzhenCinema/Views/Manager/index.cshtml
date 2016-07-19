@@ -1,0 +1,108 @@
+﻿@{
+    Layout = "~/Views/Shared/managerLayout.cshtml";
+    ViewBag.pageTitle = "Dashboard";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>全真影院-后台管理</title>
+</head>
+<body>
+    <!-- 四个功能块 -->
+    <div class="row">
+        <div class="col-lg-3 col-md-6">
+            <div class="panel panel1">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <img src=@Url.Content("~/Content/images/icon/icon02.png")>
+                            @*<img src="../../images/icon/icon02.png">*@
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="huge">@ViewBag.movie_count</div>
+                            <div>在映电影</div>
+                        </div>
+                    </div>
+                </div>
+                <a href="movies.html">
+                    <div class="panel-footer">
+                        <span class="pull-left">电影排片</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <div class="panel panel2">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <img src=@Url.Content("~/Content/images/icon/icon04.png")>
+                            @*<img src="../../images/icon/icon04.png">*@
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="huge">@ViewBag.discount_count</div>
+                            <div>优惠规则</div>
+                        </div>
+                    </div>
+                </div>
+                <a href="discount.html">
+                    <div class="panel-footer">
+                        <span class="pull-left">折扣管理</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <div class="panel panel3">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <img src=@Url.Content("~/Content/images/icon/icon01.png")>
+                            @*<img src="../../images/icon/icon01.png">*@
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="huge">@ViewBag.staff_count</div>
+                            <div>员工</div>
+                        </div>
+                    </div>
+                </div>
+                <a href="staff.html">
+                    <div class="panel-footer">
+                        <span class="pull-left">员工管理</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <div class="panel panel4">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <img src=@Url.Content("~/Content/images/icon/icon03.png")>
+                            @*<img src="../../images/icon/icon03.png">*@
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="huge">@ViewBag.member_count</div>
+                            <div>会员</div>
+                        </div>
+                    </div>
+                </div>
+                <a href="member.html">
+                    <div class="panel-footer">
+                        <span class="pull-left">会员管理</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

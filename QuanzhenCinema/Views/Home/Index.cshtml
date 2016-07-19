@@ -1,32 +1,14 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
-    <title>全真影院-首页</title>
+﻿@{
+    Layout = "../Default/clientLayout.cshtml";
+}
 
-    <link rel="shortcut icon" href="@Url.Content("~/Content/images/logo.ico")" type="image/x-icon" />
-    <link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet")">
+<!DOCTYPE html>
+<html>
+<head>
+    <title>全真影院-首页</title>
     <link href="@Url.Content("~/Content/index.css")" rel="stylesheet">
-    <link href="@Url.Content("~/Content/header_visitor.css")" rel="stylesheet">
-    <link href="@Url.Content("~/Content/footer.css")" rel="stylesheet">
 </head>
 <body>
-
-    <div class="header">
-        <div class="container">
-            <span>
-                <a href="@Url.Action("Index","Home")"><img src="@Url.Content("~/Content/images/logo.png")"></a>
-                <form class="pull-right" role="search">
-                    <div class="form-group has-feedback">
-                        <input type="text" class="form-control" placeholder="search">
-                        <i class="form-control-feedback glyphicon glyphicon-search"></i>
-                    </div>
-                </form>
-            </span>
-        </div>
-    </div>
 
     <div class="container-fluid">
         <div class="row-fluid">
@@ -107,38 +89,6 @@
         </div>
     </div>
 
-    <div class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3">
-                    <h1>全真电影院</h1>
-                    <p>一个智障数据库项目，很全真</p>
-                </div>
-                <div class="col-md-3">
-                    <address>
-                        <strong>Tongji University,</strong><br>
-                        4800 Cao'an Highway, Jiading District,<br>
-                        Shanghai 201804<br>
-                    </address>
-                </div>
-                <div class="col-md-3">
-                    <address>
-                        <strong>项目地址</strong><br>
-                        <a href="https://github.com/QuanzhenCinema">https://github.com/QuanzhenCinema</a>
-                    </address>
-                </div>
-                <div class="col-md-3">
-                    @Html.ActionLink("开发人员", "developer", "Default")
-                    <br>
-                    @Html.ActionLink("后台登录", "login", "Default")
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
-    <script src="@Url.Content("~/Scripts/jquery.min.js")"></script>
-    <script src="@Url.Content("~/Scripts/bootstrap.min.js")"></script>
     <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/carousel.js"></script>
 </body>
 </html>

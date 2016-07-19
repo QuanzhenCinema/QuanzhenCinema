@@ -148,6 +148,7 @@
     <Compile Include="Controllers\HALLsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IMAGEsController.cs" />
+    <Compile Include="Controllers\ManagerController.cs" />
     <Compile Include="Controllers\MEMBERsController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="Controllers\ORDERsController.cs" />
@@ -297,6 +298,9 @@
     <Content Include="Views\Default\developer.cshtml" />
     <Content Include="Views\Default\description.cshtml" />
     <Content Include="Views\Default\login.cshtml" />
+    <Content Include="Views\Shared\managerLayout.cshtml" />
+    <Content Include="Views\Manager\index.cshtml" />
+    <Content Include="Views\Shared\clientLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
