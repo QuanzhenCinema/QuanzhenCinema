@@ -31,3 +31,207 @@
 </div>
 <p>@DateTime.Now.ToLocalTime()</p>
 <h1>@ViewBag.x</h1>
+
+<div id="calendar"></div>
+@section scripts{
+<script>
+        var op_state = 1;//1:select, 2:create, 3:update, 4:delete
+
+        var selected_display = [];
+
+        var ViewBag = {
+            Display: [
+                {display_id: 1000000001, length: 6},
+                {display_id: 1000000002, length: 7},
+                {display_id: 1000000003, length: 8},
+                {display_id: 1000000004, length: 9}
+            ],
+            Movie: ['HULU WA','Warcraft','Never Gone','Now you see me2'],
+            Schedule: [
+                {schedule_id: 1, display_id: 1, hall_id: 1, original_price: 1, start_time: '', end_time:''},
+                {},
+                {},
+                {}
+            ]
+        };
+        var add_update_list = [];
+        var delete_list = [];
+
+        //generate events according to the json response
+        //this 'events' is the only event resource
+        var events = [
+            { id: '1', resourceId: '2', start: '2016-05-07T11:00:00', end: '2016-05-07T14:00:00', title: 'event 1', schedule_id: 1, display_id: 100001, original_price: 20},
+            { id: '2', resourceId: '4', start: '2016-05-07T12:00:00', end: '2016-05-07T16:00:00', title: 'event 2', schedule_id: 2, display_id: 100003, original_price: 80},
+            { id: '3', resourceId: '5', start: '2016-05-07T10:00:00', end: '2016-05-07T15:00:00', title: 'event 3', schedule_id: 3, display_id: 100007, original_price: 40}
+        ];
+        var init = {
+            schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives',
+            defaultView: 'agendaDay',
+            defaultDate: '2016-05-07',
+            minTime: '10:00:00',
+            maxTime: '23:00:00',
+            allDaySlot: false,
+            eventStartEditable: true,
+            slotDuration: '00:15:00',
+            selectable: true,
+            eventLimit: true, // allow "more" link when too many events
+            header: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'agendaDay,agendaTwoDay,agendaWeek,month'
+            },
+            views: {
+                agendaTwoDay: {
+                    type: 'agenda',
+                    duration: { days: 2 },
+                    groupByResource: true
+                }
+            },
+            resources: [
+                { id: '1', title: 'Hall 1'},
+                { id: '2', title: 'Hall 2', eventColor: 'green' },
+                { id: '3', title: 'Hall 3', eventColor: 'orange' },
+                { id: '4', title: 'Hall 4', eventColor: 'red' },
+                { id: '5', title: 'Hall 5', eventColor: 'blue'}
+            ]
+        };
+
+        $(document).ready(function() {
+            $('#calendar').fullCalendar(init);
+            $('#calendar').fullCalendar('addEventSource', events);
+            initMovieList(ViewBag);
+            $("#addEvent").on('click', function () {
+                layer.open({
+                    content: 'test',
+                    btn: ['按钮一', '按钮二', '按钮三'],
+                    yes: function(index, layero){
+                        //按钮【按钮一】的回调
+                    },
+                    btn2: function(index, layero){
+                        //按钮【按钮二】的回调
+                    },
+                    btn3: function(index, layero){
+                        //按钮【按钮三】的回调
+                    },
+                    cancel: function(){
+                        //右上角关闭回调
+                    }
+                });
+            });
+            $("#deleteEvent").on('click', function () {
+                layer.prompt({
+                    formType: 2,
+                    value: '',
+                    title: '请输入值'
+                }, function(value, index, elem){
+                    alert(value); //得到value
+                    layer.close(index);
+                });
+            })
+        });
+
+        function refreshSchedule(events)
+        {
+            $('#calendar').fullCalendar('removeEventSource', events);
+            $('#calendar').fullCalendar('addEventSource', events);
+        }
+
+        function initMovieList(ViewBag) {
+            var display = ViewBag.Display;
+            for(i in display)
+            {
+                var toappend = document.createElement('p');
+                toappend.innerHTML = 'display_id:' + display[i].display_id + '  length:' + display[i].length + '  movie_name:' + ViewBag.Movie[i];
+//                console.log(toappend);
+                document.getElementById('movieList').appendChild(toappend);
+            }
+        }
+
+
+        function sendAddUpdateList() {
+            var xmlhttp;
+            var postStr;
+            if (window.XMLHttpRequest)
+            {// code for IE7+, Firefox, Chrome, Opera, Safari
+                xmlhttp=new XMLHttpRequest();
+            }
+            else
+            {// code for IE6, IE5
+                xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttp.open('POST', '/schedules/addupdate', true);
+            xmlhttp.send('.....');
+            xmlhttp.onreadystatechange=function()
+            {
+                if (xmlhttp.readyState==4 && xmlhttp.status==200)
+                {
+                    document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+                }
+            }
+        }
+
+        function sendDeleteList()
+        {
+            var xmlhttp;
+            if (window.XMLHttpRequest)
+            {// code for IE7+, Firefox, Chrome, Opera, Safari
+                xmlhttp=new XMLHttpRequest();
+            }
+            else
+            {// code for IE6, IE5
+                xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+            }
+        }
+
+        function addSchedule() {
+
+        }
+
+
+
+        function getEvents() {
+            var eventsList = $('#calendar').fullCalendar('clientEvents');
+            var x = [];
+            for (i in eventsList)
+            {
+                var temp = {};
+
+                var temp_start = new Date(eventsList[i].start - 8*3600*1000);
+                var year = temp_start.getFullYear();
+                var month = temp_start.getMonth()+1;
+                var day = temp_start.getDay()+1;
+                var hour = temp_start.getHours();
+                var minute = temp_start.getMinutes();
+                var second = temp_start.getSeconds();
+                var start_date = year
+                        + '-' + (month<10? '0'+month : month)
+                        + '-' + (day<10? '0'+day : day)
+                        + ' ' + (hour<10? '0'+hour : hour)
+                        + '-' + (minute<10? '0'+minute : minute)
+                        + '-' + (second<10? '0'+second : second);
+                temp.start_time = start_date;
+
+                var temp_end = new Date(eventsList[i].end - 8*3600*1000);
+                year = temp_end.getFullYear();
+                month = temp_end.getMonth()+1;
+                day = temp_end.getDay()+1;
+                hour = temp_end.getHours();
+                minute = temp_end.getMinutes();
+                second = temp_end.getSeconds();
+                end_date = year
+                        + '-' + (month<10? '0'+month : month)
+                        + '-' + (day<10? '0'+day : day)
+                        + ' ' + (hour<10? '0'+hour : hour)
+                        + '-' + (minute<10? '0'+minute : minute)
+                        + '-' + (second<10? '0'+second : second);
+                temp.end_time = end_date;
+
+                temp.hall_id = eventsList[i].resourceId;
+                temp.schedule_id = eventsList[i].schedule_id;
+                temp.display_id = eventsList[i].display_id;
+                x.push(temp);
+            }
+            return x;
+        }
+</script>
+}
