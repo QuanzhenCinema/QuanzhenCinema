@@ -94,7 +94,7 @@
             ],
 
             viewRender: function (view, element) {
-                alert(view.intervalStart);
+                //alert(view.intervalStart);
             },
 
             select: function(start, end, jsEvent, view, resource) {
@@ -401,6 +401,7 @@
         }
         var load_layer = [];
         function submitChange() {
+            events = getEvents();
             for(var i in events)
             {
 //                $("#SCHEDULE_ID").attr("value");
@@ -415,7 +416,6 @@
                     type: 'POST',
                     url: '/schedule_movie/addupdate',
                     data: {
-                        SCHEDULE_ID: "",
                         DISPLAY_ID: events[i].display_id,
                         START_TIME: events[i].start,
                         END_TIME: events[i].end,
@@ -463,16 +463,17 @@
         <tbody id="movieList"></tbody>
     </table>
     <div id="calendar"></div>
-    <!--<form id="new_schedule" method="post" action="/schedule_movie/addupdate">-->
-    <!--<input type="text" id="SCHEDULE_ID" name="SCHEDULE_ID" disabled>-->
-    <!--<input type="text" id="DISPLAY_ID" name="DISPLAY_ID" disabled>-->
-    <!--<input type="text" id="START_TIME" name="START_TIME" disabled>-->
-    <!--<input type="text" id="END_TIME" name="END_TIME" disabled>-->
-    <!--<input type="text" id="HALL_ID" name="HALL_ID" disabled>-->
-    <!--<input type="text" id="ORIGINAL_PRICE" name="ORIGINAL_PRICE" disabled>-->
-    <!--<input type="text" id="START_SLOT" name="START_SLOT" disabled>-->
-    <!--<input type="text" id="END_SLOT" name="END_SLOT" disabled>-->
-    <!--</form>-->
+    <form id="new_schedule" method="post" action="/schedule_movie/addupdate">
+        <input type="text" id="SCHEDULE_ID" name="SCHEDULE_ID" >
+        <input type="text" id="DISPLAY_ID" name="DISPLAY_ID" >
+        <input type="text" id="START_TIME" name="START_TIME" >
+        <input type="text" id="END_TIME" name="END_TIME" >
+        <input type="text" id="HALL_ID" name="HALL_ID">
+        <input type="text" id="ORIGINAL_PRICE" name="ORIGINAL_PRICE">
+        <input type="text" id="START_SLOT" name="START_SLOT">
+        <input type="text" id="END_SLOT" name="END_SLOT">
+        <button type="submit">submit</button>
+    </form>
 
 </body>
 

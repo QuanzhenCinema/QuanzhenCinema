@@ -1,0 +1,33 @@
+﻿@using QuanzhenCinema.Business
+
+@{
+    ViewBag.Title = "IndexAdmin";
+}
+
+<fieldset>
+    <legend>用户状态</legend>
+    <form action="@Request.RawUrl" method="post">
+        @{
+            if (Request.IsAuthenticated)
+            {
+                @: 当前管理员已登录，登录名：
+                @Context.User.Identity.Name<br />
+                {
+                    var user = Context.User as MyFormsPrincipal<UserInfo>
+                  ;
+                    if (user != null)
+                    {
+                        @user.UserData.ToString()
+                    }
+                }
+                <br />
+                <input type="submit" name="Logon" value="退出" />
+            }
+            else
+            {
+                <b> 当前用户还未登录。</b>
+            }
+        }
+    </form>
+</fieldset>
+

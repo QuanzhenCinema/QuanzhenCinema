@@ -138,14 +138,20 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Business\BasicAuthAttribute.cs" />
+    <Compile Include="Business\GetRoles.cs" />
+    <Compile Include="Business\GetUser.cs" />
     <Compile Include="Business\Sale.cs" />
     <Compile Include="Business\Schedule_Movie.cs" />
+    <Compile Include="Business\StaffManage.cs" />
+    <Compile Include="Business\UserInfo.cs" />
     <Compile Include="Controllers\CATEGORiesController.cs" />
     <Compile Include="Controllers\DISCOUNTsController.cs" />
     <Compile Include="Controllers\DISPLAYsController.cs" />
     <Compile Include="Controllers\HALLsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IMAGEsController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MEMBERsController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="Controllers\ORDERsController.cs" />
@@ -178,6 +184,7 @@
     <Compile Include="ViewModel\TestViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Business\ActionRoles.xml" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\fullcalendar.min.css" />
@@ -350,6 +357,11 @@
     <Content Include="Scripts\layer-v2.4\文档\layer官网.url" />
     <Content Include="Scripts\layer-v2.4\文档\layer文档.url" />
     <Content Include="Scripts\layer-v2.4\文档\layer社区.url" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Login\IndexAdmin.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
