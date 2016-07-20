@@ -62,7 +62,7 @@ namespace QuanzhenCinema.Business{
 
         public List<DisplayMovieName_ViewModel> getDisplay(){
             String sql = "select display_id,movie_id,is_3d,is_imax,language,lowest_price,length,name,expire_date from display natural join movie where expire_date > to_date('" + dt.Year + "-" + dt.Month + "-" + dt.Day + "','YYYY-MM-DD')";
-            List<DisplayMovieName_ViewModel> display_moviename = db.Database.SqlQuery<DisplayMovieName_ViewModel>(sql).ToList();
+                List<DisplayMovieName_ViewModel> display_moviename = db.Database.SqlQuery<DisplayMovieName_ViewModel>(sql).ToList();
             return display_moviename;
         }
 
