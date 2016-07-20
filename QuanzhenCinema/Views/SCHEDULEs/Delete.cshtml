@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/managerLayout.cshtml";
 }
 
 <h2>Delete</h2>
@@ -28,6 +29,22 @@
         </dd>
 
         <dt>
+            @Html.DisplayNameFor(model => model.DAY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DAY)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ORIGINAL_PRICE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ORIGINAL_PRICE)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.START_TIME)
         </dt>
 
@@ -44,19 +61,19 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.DAY)
+            @Html.DisplayNameFor(model => model.END_SLOT)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.DAY)
+            @Html.DisplayFor(model => model.END_SLOT)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.ORIGINAL_PRICE)
+            @Html.DisplayNameFor(model => model.START_SLOT)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.ORIGINAL_PRICE)
+            @Html.DisplayFor(model => model.START_SLOT)
         </dd>
 
     </dl>

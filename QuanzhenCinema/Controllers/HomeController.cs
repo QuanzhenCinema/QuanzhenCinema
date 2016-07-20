@@ -8,9 +8,16 @@ namespace QuanzhenCinema.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        public ActionResult Index(string a)
         {
-            return View();
+            ViewBag.x = a;
+            return View(ViewBag);
+        }
+
+        public ActionResult Test(string a)
+        {
+            ViewBag.stra = a;
+            return View(ViewBag);
         }
 
         public ActionResult About()

@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/managerLayout.cshtml";
 }
 <h1>excuse me?</h1>
 <h2>Index</h2>
@@ -12,10 +13,16 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.DISPLAY.LANGUAGE)
+            @Html.DisplayNameFor(model => model.DISPLAY.DISPLAY_ID)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.HALL.HALL_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DAY)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ORIGINAL_PRICE)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.START_TIME)
@@ -24,10 +31,10 @@
             @Html.DisplayNameFor(model => model.END_TIME)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DAY)
+            @Html.DisplayNameFor(model => model.END_SLOT)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ORIGINAL_PRICE)
+            @Html.DisplayNameFor(model => model.START_SLOT)
         </th>
         <th></th>
     </tr>
@@ -35,10 +42,16 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.DISPLAY.LANGUAGE)
+            @Html.DisplayFor(modelItem => item.DISPLAY.DISPLAY_ID)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.HALL.HALL_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DAY)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ORIGINAL_PRICE)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.START_TIME)
@@ -47,10 +60,10 @@
             @Html.DisplayFor(modelItem => item.END_TIME)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.DAY)
+            @Html.DisplayFor(modelItem => item.END_SLOT)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ORIGINAL_PRICE)
+            @Html.DisplayFor(modelItem => item.START_SLOT)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.SCHEDULE_ID }) |

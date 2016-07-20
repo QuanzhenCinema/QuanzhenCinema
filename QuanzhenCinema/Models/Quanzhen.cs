@@ -8,7 +8,7 @@ namespace QuanzhenCinema.Models
     public partial class Quanzhen : DbContext
     {
         public Quanzhen()
-            : base("name=Quanzhen1")
+            : base("name=Quanzhen2")
         {
         }
 
@@ -104,6 +104,14 @@ namespace QuanzhenCinema.Models
                 .HasMany(e => e.SNACK)
                 .WithMany(e => e.ORDER)
                 .Map(m => m.ToTable("ORDER_SNACK", "CINEMA_EDITOR").MapLeftKey("ORDER").MapRightKey("SNACK"));
+
+            modelBuilder.Entity<SCHEDULE>()
+                .Property(e => e.END_SLOT)
+                .HasPrecision(38, 0);
+
+            modelBuilder.Entity<SCHEDULE>()
+                .Property(e => e.START_SLOT)
+                .HasPrecision(38, 0);
 
             modelBuilder.Entity<SCHEDULE>()
                 .HasMany(e => e.TICKET)
