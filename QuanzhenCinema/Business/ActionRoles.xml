@@ -1,8 +1,46 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Roles>
-    <Controller name="Login">
-        <Action name="Login"></Action>
-        <Action name="Index">user</Action>
-        <Action name="IndexAdmin">admin</Action>
-    </Controller>
+  <Controller name="Login">
+    <Action name="Index"></Action>
+    <Action name="IndexUser">user</Action>
+    <Action name="IndexAdmin">admin</Action>
+  </Controller>
+  <Controller name="SCHEDULEs">
+    <Action name="Index">admin</Action>
+    <Action name="Create">admin</Action>
+    <Action name="Delete">admin</Action>
+    <Action name="Details">admin</Action>
+    <Action name="Edit">admin</Action>
+  </Controller>
+  <Controller name="MANAGER">
+    <Action name="index">admin</Action>
+  </Controller>
+  <Controller name="DISCOUNTs">
+    <Action name="Index">admin</Action>
+    <Action name="Create">admin</Action>
+    <Action name="Delete">admin</Action>
+    <Action name="Details">admin</Action>
+    <Action name="Edit">admin</Action>
+  </Controller>
+  <Controller name="SNACKs">
+    <Action name="Index">admin</Action>
+    <Action name="Create">admin</Action>
+    <Action name="Delete">admin</Action>
+    <Action name="Details">admin</Action>
+    <Action name="Edit">admin</Action>
+  </Controller>
+  <Controller name="STAFFs">
+    <Action name="Index">admin</Action>
+    <Action name="Create">admin</Action>
+    <Action name="Delete">admin</Action>
+    <Action name="Details">admin</Action>
+    <Action name="Edit">admin</Action>
+  </Controller>
+  <Controller name="MEMBERs">
+    <Action name="Index">admin</Action>
+    <Action name="Create">admin</Action>
+    <Action name="Delete">admin</Action>
+    <Action name="Details">admin</Action>
+    <Action name="Edit">admin</Action>
+  </Controller>
 </Roles>

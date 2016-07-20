@@ -158,6 +158,7 @@
     <Compile Include="Controllers\ManagerController.cs" />
     <Compile Include="Controllers\MEMBERsController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
+    <Compile Include="Controllers\MoviesSelectController.cs" />
     <Compile Include="Controllers\MYORDERsController.cs" />
     <Compile Include="Controllers\SaleController.cs" />
     <Compile Include="Controllers\SCHEDULEsController.cs" />
@@ -177,7 +178,6 @@
     <Compile Include="Models\MEMBER.cs" />
     <Compile Include="Models\MOVIE.cs" />
     <Compile Include="Models\MYORDER.cs" />
-    <Compile Include="Models\ORDER.cs" />
     <Compile Include="Models\Quanzhen.cs" />
     <Compile Include="Models\SCHEDULE.cs" />
     <Compile Include="Models\SEAT.cs" />

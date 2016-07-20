@@ -26,7 +26,7 @@ namespace QuanzhenCinema.Models
         [StringLength(30)]
         public string NAME { get; set; }
 
-        public bool? GENDER { get; set; }
+        public int? GENDER { get; set; }
 
         [StringLength(30)]
         public string POSITION { get; set; }

@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using System.Web.Mvc.Filters;
 using QuanzhenCinema.Business;
-using System.Web.Routing;
 
 namespace QuanzhenCinema
 {
@@ -18,7 +14,7 @@ namespace QuanzhenCinema
             var user = filterContext.HttpContext.User;
             if (user == null || !user.Identity.IsAuthenticated)
             {
-                filterContext.Result = new RedirectResult("/Login/Login");     //访问特定页面时，未登录用户强制定位的地址
+                filterContext.Result = new RedirectResult("/Login");     //访问特定页面时，未登录用户强制定位的地址
                 return;
             }
         }
@@ -39,7 +35,8 @@ namespace QuanzhenCinema
             string str = filterContext.HttpContext.User.Identity.Name;
             var user = filterContext.HttpContext.User;
             if (user == null || !user.Identity.IsAuthenticated) { }
-            else {
+            else
+            {
                 StaffManage sm = new StaffManage();
                 string realRole = sm.searchRole(str);
                 foreach (string role in Roles)

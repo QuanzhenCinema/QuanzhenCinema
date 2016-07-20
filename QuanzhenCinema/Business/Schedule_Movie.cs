@@ -23,7 +23,6 @@ namespace QuanzhenCinema.Business{
     {
         public int SCHEDULE_ID { get; set; }
         public int DISPLAY_ID { get; set; }
-        public int DAY { get; set; }
         public int HALL_ID { get; set; }
         public int ORIGINAL_PRICE { get; set; }
         public DateTime? START_TIME { get; set; }
