@@ -12,7 +12,7 @@ namespace QuanzhenCinema.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public STAFF()
         {
-            ORDER = new HashSet<ORDER>();
+            MYORDER = new HashSet<MYORDER>();
         }
 
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
@@ -26,12 +26,16 @@ namespace QuanzhenCinema.Models
         [StringLength(30)]
         public string NAME { get; set; }
 
-        public int? GENDER { get; set; }
+        public bool? GENDER { get; set; }
 
-        [StringLength(20)]
+        [StringLength(30)]
         public string POSITION { get; set; }
 
+        [Required]
+        [StringLength(20)]
+        public string ROLE { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ORDER> ORDER { get; set; }
+        public virtual ICollection<MYORDER> MYORDER { get; set; }
     }
 }

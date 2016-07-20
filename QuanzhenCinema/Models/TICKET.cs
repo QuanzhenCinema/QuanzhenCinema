@@ -25,7 +25,7 @@ namespace QuanzhenCinema.Models
 
         public int SEAT_HALL_ID { get; set; }
 
-        public virtual ORDER ORDER { get; set; }
+        public virtual MYORDER MYORDER { get; set; }
 
         public virtual SCHEDULE SCHEDULE { get; set; }
 

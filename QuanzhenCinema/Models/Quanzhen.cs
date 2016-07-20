@@ -8,7 +8,7 @@ namespace QuanzhenCinema.Models
     public partial class Quanzhen : DbContext
     {
         public Quanzhen()
-            : base("name=Quanzhen2")
+            : base("name=Quanzhen4")
         {
         }
 
@@ -19,7 +19,7 @@ namespace QuanzhenCinema.Models
         public virtual DbSet<IMAGE> IMAGE { get; set; }
         public virtual DbSet<MEMBER> MEMBER { get; set; }
         public virtual DbSet<MOVIE> MOVIE { get; set; }
-        public virtual DbSet<ORDER> ORDER { get; set; }
+        public virtual DbSet<MYORDER> MYORDER { get; set; }
         public virtual DbSet<SCHEDULE> SCHEDULE { get; set; }
         public virtual DbSet<SEAT> SEAT { get; set; }
         public virtual DbSet<SNACK> SNACK { get; set; }
@@ -29,13 +29,9 @@ namespace QuanzhenCinema.Models
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<CATEGORY>()
-                .Property(e => e.CATEGORY_NAME)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<CATEGORY>()
                 .HasMany(e => e.MOVIE)
                 .WithMany(e => e.CATEGORY)
-                .Map(m => m.ToTable("CATEGORY_MOVIE", "CINEMA_EDITOR").MapLeftKey("CATEGORY").MapRightKey("MOVIE"));
+                .Map(m => m.ToTable("CATEGORY_MOVIE", "CINEMA_EDITOR").MapLeftKey("CATEGORY_ID").MapRightKey("MOVIE_ID"));
 
             modelBuilder.Entity<DISCOUNT>()
                 .Property(e => e.RATE)
@@ -44,11 +40,7 @@ namespace QuanzhenCinema.Models
             modelBuilder.Entity<DISCOUNT>()
                 .HasMany(e => e.DISPLAY)
                 .WithMany(e => e.DISCOUNT)
-                .Map(m => m.ToTable("DISCOUNT_DISPLAY", "CINEMA_EDITOR").MapLeftKey("DISCOUNT").MapRightKey("DISPLAY"));
-
-            modelBuilder.Entity<DISPLAY>()
-                .Property(e => e.LANGUAGE)
-                .IsUnicode(false);
+                .Map(m => m.ToTable("DISCOUNT_DISPLAY", "CINEMA_EDITOR").MapLeftKey("DISCOUNT_ID").MapRightKey("DISPLAY_ID"));
 
             modelBuilder.Entity<DISPLAY>()
                 .HasMany(e => e.SCHEDULE)
@@ -73,18 +65,6 @@ namespace QuanzhenCinema.Models
                 .Property(e => e.PHONE_NUMBER)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<MEMBER>()
-                .Property(e => e.NAME)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<MOVIE>()
-                .Property(e => e.NAME)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<MOVIE>()
-                .Property(e => e.DESCRIPTION)
-                .IsUnicode(false);
-
             modelBuilder.Entity<MOVIE>()
                 .HasMany(e => e.DISPLAY)
                 .WithRequired(e => e.MOVIE)
@@ -95,23 +75,15 @@ namespace QuanzhenCinema.Models
                 .WithRequired(e => e.MOVIE)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<ORDER>()
+            modelBuilder.Entity<MYORDER>()
                 .HasMany(e => e.TICKET)
-                .WithRequired(e => e.ORDER)
+                .WithRequired(e => e.MYORDER)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<ORDER>()
+            modelBuilder.Entity<MYORDER>()
                 .HasMany(e => e.SNACK)
-                .WithMany(e => e.ORDER)
-                .Map(m => m.ToTable("ORDER_SNACK", "CINEMA_EDITOR").MapLeftKey("ORDER").MapRightKey("SNACK"));
-
-            modelBuilder.Entity<SCHEDULE>()
-                .Property(e => e.END_SLOT)
-                .HasPrecision(38, 0);
-
-            modelBuilder.Entity<SCHEDULE>()
-                .Property(e => e.START_SLOT)
-                .HasPrecision(38, 0);
+                .WithMany(e => e.MYORDER)
+                .Map(m => m.ToTable("MYORDER_SNACK", "CINEMA_EDITOR").MapLeftKey("ORDER_ID").MapRightKey("SNACK_ID"));
 
             modelBuilder.Entity<SCHEDULE>()
                 .HasMany(e => e.TICKET)
@@ -124,24 +96,16 @@ namespace QuanzhenCinema.Models
                 .HasForeignKey(e => new { e.SEAT_COLUMN_ID, e.SEAT_ROW_ID, e.SEAT_HALL_ID })
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<SNACK>()
-                .Property(e => e.NAME)
-                .IsUnicode(false);
-
             modelBuilder.Entity<STAFF>()
                 .Property(e => e.PASSWORD)
                 .IsUnicode(false);
 
             modelBuilder.Entity<STAFF>()
-                .Property(e => e.NAME)
+                .Property(e => e.ROLE)
                 .IsUnicode(false);
 
             modelBuilder.Entity<STAFF>()
-                .Property(e => e.POSITION)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<STAFF>()
-                .HasMany(e => e.ORDER)
+                .HasMany(e => e.MYORDER)
                 .WithOptional(e => e.STAFF)
                 .HasForeignKey(e => e.OPERATOR_ID);
         }

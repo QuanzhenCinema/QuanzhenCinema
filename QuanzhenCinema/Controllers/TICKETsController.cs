@@ -17,7 +17,7 @@ namespace QuanzhenCinema.Controllers
         // GET: TICKETs
         public ActionResult Index()
         {
-            var tICKET = db.TICKET.Include(t => t.ORDER).Include(t => t.SCHEDULE).Include(t => t.SEAT);
+            var tICKET = db.TICKET.Include(t => t.MYORDER).Include(t => t.SCHEDULE).Include(t => t.SEAT);
             return View(tICKET.ToList());
         }
 
@@ -39,7 +39,7 @@ namespace QuanzhenCinema.Controllers
         // GET: TICKETs/Create
         public ActionResult Create()
         {
-            ViewBag.ORDER_ID = new SelectList(db.ORDER, "ORDER_ID", "ORDER_ID");
+            ViewBag.ORDER_ID = new SelectList(db.MYORDER, "ORDER_ID", "ORDER_ID");
             ViewBag.SCHEDULE_ID = new SelectList(db.SCHEDULE, "SCHEDULE_ID", "SCHEDULE_ID");
             ViewBag.SEAT_COLUMN_ID = new SelectList(db.SEAT, "COLUMN_ID", "COLUMN_ID");
             return View();
@@ -59,7 +59,7 @@ namespace QuanzhenCinema.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.ORDER_ID = new SelectList(db.ORDER, "ORDER_ID", "ORDER_ID", tICKET.ORDER_ID);
+            ViewBag.ORDER_ID = new SelectList(db.MYORDER, "ORDER_ID", "ORDER_ID", tICKET.ORDER_ID);
             ViewBag.SCHEDULE_ID = new SelectList(db.SCHEDULE, "SCHEDULE_ID", "SCHEDULE_ID", tICKET.SCHEDULE_ID);
             ViewBag.SEAT_COLUMN_ID = new SelectList(db.SEAT, "COLUMN_ID", "COLUMN_ID", tICKET.SEAT_COLUMN_ID);
             return View(tICKET);
@@ -77,7 +77,7 @@ namespace QuanzhenCinema.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.ORDER_ID = new SelectList(db.ORDER, "ORDER_ID", "ORDER_ID", tICKET.ORDER_ID);
+            ViewBag.ORDER_ID = new SelectList(db.MYORDER, "ORDER_ID", "ORDER_ID", tICKET.ORDER_ID);
             ViewBag.SCHEDULE_ID = new SelectList(db.SCHEDULE, "SCHEDULE_ID", "SCHEDULE_ID", tICKET.SCHEDULE_ID);
             ViewBag.SEAT_COLUMN_ID = new SelectList(db.SEAT, "COLUMN_ID", "COLUMN_ID", tICKET.SEAT_COLUMN_ID);
             return View(tICKET);
@@ -96,7 +96,7 @@ namespace QuanzhenCinema.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.ORDER_ID = new SelectList(db.ORDER, "ORDER_ID", "ORDER_ID", tICKET.ORDER_ID);
+            ViewBag.ORDER_ID = new SelectList(db.MYORDER, "ORDER_ID", "ORDER_ID", tICKET.ORDER_ID);
             ViewBag.SCHEDULE_ID = new SelectList(db.SCHEDULE, "SCHEDULE_ID", "SCHEDULE_ID", tICKET.SCHEDULE_ID);
             ViewBag.SEAT_COLUMN_ID = new SelectList(db.SEAT, "COLUMN_ID", "COLUMN_ID", tICKET.SEAT_COLUMN_ID);
             return View(tICKET);

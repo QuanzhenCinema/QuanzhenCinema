@@ -20,7 +20,7 @@ namespace QuanzhenCinema.Models
         public int CATEGORY_ID { get; set; }
 
         [Required]
-        [StringLength(1000)]
+        [StringLength(30)]
         public string CATEGORY_NAME { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

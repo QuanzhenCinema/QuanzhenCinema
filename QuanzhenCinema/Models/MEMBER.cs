@@ -13,7 +13,7 @@ namespace QuanzhenCinema.Models
         [StringLength(1000)]
         public string PHONE_NUMBER { get; set; }
 
-        [StringLength(20)]
+        [StringLength(30)]
         public string NAME { get; set; }
 
         public DateTime REGISTER_DATE { get; set; }

@@ -27,7 +27,7 @@ namespace QuanzhenCinema.Models
         public bool IS_IMAX { get; set; }
 
         [Required]
-        [StringLength(1000)]
+        [StringLength(30)]
         public string LANGUAGE { get; set; }
 
         public int LOWEST_PRICE { get; set; }

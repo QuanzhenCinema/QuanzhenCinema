@@ -1,50 +1,58 @@
 ﻿@model QuanzhenCinema.Models.TICKET
 
 @{
-    ViewBag.Title = "Details";
+    Layout = null;
 }
 
-<h2>Details</h2>
+<!DOCTYPE html>
 
-<div>
-    <h4>TICKET</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.ORDER.ORDER_ID)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ORDER.ORDER_ID)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.SCHEDULE.SCHEDULE_ID)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SCHEDULE.SCHEDULE_ID)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.SEAT.COLUMN_ID)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SEAT.COLUMN_ID)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PRICE)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PRICE)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.TICKET_ID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>TICKET</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.MYORDER.ORDER_ID)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.MYORDER.ORDER_ID)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.SCHEDULE.SCHEDULE_ID)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.SCHEDULE.SCHEDULE_ID)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.SEAT.COLUMN_ID)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.SEAT.COLUMN_ID)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.PRICE)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.PRICE)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.TICKET_ID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

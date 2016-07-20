@@ -21,7 +21,7 @@ namespace QuanzhenCinema.Models
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int MOVIE_ID { get; set; }
 
-        [StringLength(1000)]
+        [StringLength(30)]
         public string NAME { get; set; }
 
         [StringLength(1000)]

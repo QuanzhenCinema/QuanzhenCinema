@@ -19,9 +19,6 @@
             @Html.DisplayNameFor(model => model.HALL.HALL_ID)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DAY)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.ORIGINAL_PRICE)
         </th>
         <th>
@@ -29,12 +26,6 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.END_TIME)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.END_SLOT)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.START_SLOT)
         </th>
         <th></th>
     </tr>
@@ -48,9 +39,6 @@
             @Html.DisplayFor(modelItem => item.HALL.HALL_ID)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.DAY)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.ORIGINAL_PRICE)
         </td>
         <td>
@@ -58,13 +46,7 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.END_TIME)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.END_SLOT)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.START_SLOT)
-        </td>
+        </td>  
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.SCHEDULE_ID }) |
             @Html.ActionLink("Details", "Details", new { id=item.SCHEDULE_ID }) |

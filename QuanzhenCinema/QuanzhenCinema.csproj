@@ -158,7 +158,7 @@
     <Compile Include="Controllers\ManagerController.cs" />
     <Compile Include="Controllers\MEMBERsController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
-    <Compile Include="Controllers\ORDERsController.cs" />
+    <Compile Include="Controllers\MYORDERsController.cs" />
     <Compile Include="Controllers\SaleController.cs" />
     <Compile Include="Controllers\SCHEDULEsController.cs" />
     <Compile Include="Controllers\Schedule_MovieController.cs" />
@@ -176,6 +176,7 @@
     <Compile Include="Models\IMAGE.cs" />
     <Compile Include="Models\MEMBER.cs" />
     <Compile Include="Models\MOVIE.cs" />
+    <Compile Include="Models\MYORDER.cs" />
     <Compile Include="Models\ORDER.cs" />
     <Compile Include="Models\Quanzhen.cs" />
     <Compile Include="Models\SCHEDULE.cs" />
@@ -183,9 +184,6 @@
     <Compile Include="Models\SNACK.cs" />
     <Compile Include="Models\STAFF.cs" />
     <Compile Include="Models\TICKET.cs" />
-    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
-    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
-    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\Schedule_Movie.cs" />
     <Compile Include="ViewModel\TestViewModel.cs" />
@@ -723,9 +721,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="obj\Debug\QuanzhenCinema.csproj.FileListAbsolute.txt" />
-    <Content Include="obj\Debug\QuanzhenCinema.dll" />
-    <Content Include="obj\Debug\QuanzhenCinema.pdb" />
     <Content Include="Schedule_Movie\bootstrap.css" />
     <Content Include="Schedule_Movie\bootstrap.js" />
     <Content Include="Schedule_Movie\bootstrap.min.css" />
@@ -757,8 +752,6 @@
     <Content Include="bin\roslyn\Microsoft.CSharp.Core.targets" />
     <Content Include="bin\roslyn\Microsoft.VisualBasic.Core.targets" />
     <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
-    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
-    <Content Include="obj\Debug\QuanzhenCinema.csprojResolveAssemblyReference.cache" />
     <Content Include="Content\datatables-plugins\.bower.json" />
     <Content Include="Content\datatables-plugins\i18n\Afrikaans.lang" />
     <Content Include="Content\datatables-plugins\i18n\Albanian.lang" />
@@ -1109,12 +1102,16 @@
     <Content Include="Views\Shared\managerLayout.cshtml" />
     <Content Include="Views\Sale\Index.cshtml" />
     <Content Include="Views\Sale\getSchedules.cshtml" />
+    <Content Include="Views\MYORDERs\Create.cshtml" />
+    <Content Include="Views\MYORDERs\Delete.cshtml" />
+    <Content Include="Views\MYORDERs\Details.cshtml" />
+    <Content Include="Views\MYORDERs\Edit.cshtml" />
+    <Content Include="Views\MYORDERs\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\App_LocalResources\" />
     <Folder Include="Content\layer-v2.4\" />
-    <Folder Include="obj\Debug\TempPE\" />
     <Folder Include="Schedule_Movie\.idea\" />
     <Folder Include="Schedule_Movie\layer-v2.4\" />
   </ItemGroup>

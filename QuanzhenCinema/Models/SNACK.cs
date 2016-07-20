@@ -12,7 +12,7 @@ namespace QuanzhenCinema.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public SNACK()
         {
-            ORDER = new HashSet<ORDER>();
+            MYORDER = new HashSet<MYORDER>();
         }
 
         [Key]
@@ -20,12 +20,12 @@ namespace QuanzhenCinema.Models
         public int SNACK_ID { get; set; }
 
         [Required]
-        [StringLength(1000)]
+        [StringLength(30)]
         public string NAME { get; set; }
 
         public int PRICE { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ORDER> ORDER { get; set; }
+        public virtual ICollection<MYORDER> MYORDER { get; set; }
     }
 }

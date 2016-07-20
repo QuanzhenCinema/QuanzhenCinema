@@ -10,112 +10,112 @@ using QuanzhenCinema.Models;
 
 namespace QuanzhenCinema.Controllers
 {
-    public class ORDERsController : Controller
+    public class MYORDERsController : Controller
     {
         private Quanzhen db = new Quanzhen();
 
-        // GET: ORDERs
+        // GET: MYORDERs
         public ActionResult Index()
         {
-            var oRDER = db.ORDER.Include(o => o.STAFF);
-            return View(oRDER.ToList());
+            var mYORDER = db.MYORDER.Include(m => m.STAFF);
+            return View(mYORDER.ToList());
         }
 
-        // GET: ORDERs/Details/5
+        // GET: MYORDERs/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ORDER oRDER = db.ORDER.Find(id);
-            if (oRDER == null)
+            MYORDER mYORDER = db.MYORDER.Find(id);
+            if (mYORDER == null)
             {
                 return HttpNotFound();
             }
-            return View(oRDER);
+            return View(mYORDER);
         }
 
-        // GET: ORDERs/Create
+        // GET: MYORDERs/Create
         public ActionResult Create()
         {
             ViewBag.OPERATOR_ID = new SelectList(db.STAFF, "ID", "PASSWORD");
             return View();
         }
 
-        // POST: ORDERs/Create
+        // POST: MYORDERs/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ORDER_ID,OPERATOR_ID,PHONE_NUMBER")] ORDER oRDER)
+        public ActionResult Create([Bind(Include = "ORDER_ID,OPERATOR_ID,PHONE_NUMBER")] MYORDER mYORDER)
         {
             if (ModelState.IsValid)
             {
-                db.ORDER.Add(oRDER);
+                db.MYORDER.Add(mYORDER);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.OPERATOR_ID = new SelectList(db.STAFF, "ID", "PASSWORD", oRDER.OPERATOR_ID);
-            return View(oRDER);
+            ViewBag.OPERATOR_ID = new SelectList(db.STAFF, "ID", "PASSWORD", mYORDER.OPERATOR_ID);
+            return View(mYORDER);
         }
 
-        // GET: ORDERs/Edit/5
+        // GET: MYORDERs/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ORDER oRDER = db.ORDER.Find(id);
-            if (oRDER == null)
+            MYORDER mYORDER = db.MYORDER.Find(id);
+            if (mYORDER == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.OPERATOR_ID = new SelectList(db.STAFF, "ID", "PASSWORD", oRDER.OPERATOR_ID);
-            return View(oRDER);
+            ViewBag.OPERATOR_ID = new SelectList(db.STAFF, "ID", "PASSWORD", mYORDER.OPERATOR_ID);
+            return View(mYORDER);
         }
 
-        // POST: ORDERs/Edit/5
+        // POST: MYORDERs/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ORDER_ID,OPERATOR_ID,PHONE_NUMBER")] ORDER oRDER)
+        public ActionResult Edit([Bind(Include = "ORDER_ID,OPERATOR_ID,PHONE_NUMBER")] MYORDER mYORDER)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(oRDER).State = EntityState.Modified;
+                db.Entry(mYORDER).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.OPERATOR_ID = new SelectList(db.STAFF, "ID", "PASSWORD", oRDER.OPERATOR_ID);
-            return View(oRDER);
+            ViewBag.OPERATOR_ID = new SelectList(db.STAFF, "ID", "PASSWORD", mYORDER.OPERATOR_ID);
+            return View(mYORDER);
         }
 
-        // GET: ORDERs/Delete/5
+        // GET: MYORDERs/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ORDER oRDER = db.ORDER.Find(id);
-            if (oRDER == null)
+            MYORDER mYORDER = db.MYORDER.Find(id);
+            if (mYORDER == null)
             {
                 return HttpNotFound();
             }
-            return View(oRDER);
+            return View(mYORDER);
         }
 
-        // POST: ORDERs/Delete/5
+        // POST: MYORDERs/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            ORDER oRDER = db.ORDER.Find(id);
-            db.ORDER.Remove(oRDER);
+            MYORDER mYORDER = db.MYORDER.Find(id);
+            db.MYORDER.Remove(mYORDER);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

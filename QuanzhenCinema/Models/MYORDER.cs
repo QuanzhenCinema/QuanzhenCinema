@@ -6,34 +6,30 @@ namespace QuanzhenCinema.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("CINEMA_EDITOR.SCHEDULE")]
-    public partial class SCHEDULE
+    [Table("CINEMA_EDITOR.MYORDER")]
+    public partial class MYORDER
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public SCHEDULE()
+        public MYORDER()
         {
             TICKET = new HashSet<TICKET>();
+            SNACK = new HashSet<SNACK>();
         }
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int SCHEDULE_ID { get; set; }
+        public int ORDER_ID { get; set; }
 
-        public int DISPLAY_ID { get; set; }
+        public int? OPERATOR_ID { get; set; }
 
-        public DateTime START_TIME { get; set; }
+        public long? PHONE_NUMBER { get; set; }
 
-        public DateTime END_TIME { get; set; }
-
-        public int HALL_ID { get; set; }
-
-        public int ORIGINAL_PRICE { get; set; }
-
-        public virtual DISPLAY DISPLAY { get; set; }
-
-        public virtual HALL HALL { get; set; }
+        public virtual STAFF STAFF { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TICKET> TICKET { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SNACK> SNACK { get; set; }
     }
 }

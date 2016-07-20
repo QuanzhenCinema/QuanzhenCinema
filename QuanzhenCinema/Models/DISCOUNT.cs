@@ -27,7 +27,9 @@ namespace QuanzhenCinema.Models
 
         public int REMAINING_DAY { get; set; }
 
-        public int? WEEKDAY { get; set; }
+        [Required]
+        [StringLength(1000)]
+        public string DESCRIPTION { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DISPLAY> DISPLAY { get; set; }
