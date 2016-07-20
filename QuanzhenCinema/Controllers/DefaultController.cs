@@ -21,6 +21,7 @@ namespace QuanzhenCinema.Controllers
             MovieDetail md=new MovieDetail(id);
             ViewBag.moviedetail = md.getMovieDetails();
             ViewBag.categories = md.getCategory();
+            ViewBag.length = md.getLength();
             ViewBag.schedule1 = md.getSchedule1();
             ViewBag.schedule2 = md.getSchedule2();
             ViewBag.schedule3 = md.getSchedule3();

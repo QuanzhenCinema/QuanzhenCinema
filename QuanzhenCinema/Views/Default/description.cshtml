@@ -1,35 +1,38 @@
 ﻿@{
     Layout = "~/Views/Shared/clientLayout.cshtml";
-    ViewBag.pageTitle = ViewBag.moviedetail.NAME;
+    ViewBag.Title = ViewBag.moviedetail[0].NAME;
 }
 @section Head{
-    <script>
-    function getDay(time) {
-        var today = new Date(time);
-        var month = today.getMonth()+1;
-        var day = today.getDate();
-        var weekday = today.getDay()+1;
-        var chinese;
-        switch (weekday)
+    <link href=@Url.Content("~/Content/description.css") rel="stylesheet">
+}
+
+@functions{
+    public string date2day(DateTime date)
+    {
+        switch(date.DayOfWeek)
         {
-            case 1: chinese = "一"; break;
-            case 2: chinese = "二"; break;
-            case 3: chinese = "三"; break;
-            case 4: chinese = "四"; break;
-            case 5: chinese = "五"; break;
-            case 6: chinese = "六"; break;
-            case 7: chinese = "七"; break;
+            case DayOfWeek.Monday: return "一";
+            case DayOfWeek.Tuesday:return "二";
+            case DayOfWeek.Wednesday:return "三";
+            case DayOfWeek.Thursday:return "四";
+            case DayOfWeek.Friday: return "五";
+            case DayOfWeek.Saturday:return "六";
+            case DayOfWeek.Sunday:return "日";
+            default:return "";
         }
-        var result = month + '.' +day + '(周' + chinese + ')';
-        return result;
     }
-
-    document.getElementById("date1").innerHTML = getDay(new Date().getTime());
-    document.getElementById("date2").innerHTML = getDay(new Date().getTime() + 24*3600*1000);
-    document.getElementById("date3").innerHTML = getDay(new Date().getTime() + 48*3600*1000);
-
-
-</script>
+    public string doubanLink()
+    {
+        return "https://movie.douban.com/subject/" + Convert.ToString(ViewBag.moviedetail[0].MOVIE_ID) + "/cinema/shanghai/";
+    }
+}
+@{
+    var date1 = DateTime.Now;
+    var date2 = date1.AddDays(1);
+    var date3 = date1.AddDays(2);
+    var date11 = "（周"+ date2day(date1)+"）";
+    var date22 = "（周" + date2day(date2) + "）";
+    var date33 = "（周"+ date2day(date3) + "）";
 }
 <!DOCTYPE html>
 <html>
@@ -42,20 +45,29 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
-                    <img src="@ViewBag.moviedetail.IMAGE_PATH" height="310" width="210" />
+                    <img src="@ViewBag.moviedetail[0].IMAGE_PATH" height="310" width="210" />
                     <h6>正在热映</h6>
                 </div>
                 <div class="col-md-9">
-                    <h2>@ViewBag.moviedetail.NAME</h2>
+                    <h2>@ViewBag.moviedetail[0].NAME</h2>
                     <h6></h6>
                     <p>
                         类型：
                         @foreach(var item in ViewBag.categories)
                         {
-                            <span>@item.CATEGORY </span>
+                            <span>@item </span>
                         }
+                        </br>
+                        时长：
+                        @foreach(var item in ViewBag.length)
+                        {
+                            <span>@item</span><span>分钟</span>
+                        }
+                        </br>
+                        剧情简介：
+                        </p>
                     <p class="text-indent">
-                        @ViewBag.moviedetail.DESCRIPTION
+                        @ViewBag.moviedetail[0].DESCRIPTION
                     </p>
                 </div>
             </div>
@@ -75,9 +87,9 @@
             </div>
             <div class="col-md-11">
                 <ul class="nav nav-pills">
-                    <li role="presentation" data-toggle="tab" href="#day1" class="active"><a href="#" id="date1"></a></li>
-                    <li role="presentation" data-toggle="tab" href="#day2"><a href="#" id="date2"></a></li>
-                    <li role="presentation" data-toggle="tab" href="#day3"><a href="#" id="date3"></a></li>
+                    <li role="presentation" data-toggle="tab" href="#day1" class="active"><a href="#">@date1.Month.@date1.Day@date11</a></li>
+                    <li role="presentation" data-toggle="tab" href="#day2"><a href="#" id="date2">@date2.Month.@date2.Day@date22</a></li>
+                    <li role="presentation" data-toggle="tab" href="#day3"><a href="#" id="date3">@date3.Month.@date3.Day@date33</a></li>
                 </ul>
                 <div class="tab-content">
                     <div id="day1" class="tab-pane fade in active">
@@ -94,17 +106,17 @@
                                 <tr>
                                     <td>
                                         @*@Html.DisplayFor(modelItem => item.NAME)*@
-                                        @ViewBag.schedule1.START_TIME
+                                        @item.START_TIME.ToString("H:mm")
                                     </td>
                                     <td>
                                         @*@Html.DisplayFor(modelItem => item.PRICE)*@
-                                        @ViewBag.schedule1.LANGUAGE / @ViewBag.schedule1.DISPLAY_TYPE
+                                        @item.LANGUAGE / @item.DISPLAY_TYPE
                                     </td>
                                     <td>
-                                        @ViewBag.schedule1.HALL_ID
+                                        @item.HALL_ID
                                     </td>
                                     <td>
-                                        <a href="http://www.damai.cn" class="btn btn-default btn-xs active" role="button">购票</a>
+                                        <a href=@doubanLink() class="btn btn-default btn-xs active" role="button">购票</a>
                                     </td>
                                 </tr>
                             }
@@ -128,17 +140,17 @@
                                 <tr>
                                     <td>
                                         @*@Html.DisplayFor(modelItem => item.NAME)*@
-                                        @ViewBag.schedule2.START_TIME
+                                        @item.START_TIME.ToString("H:mm")
                                     </td>
                                     <td>
                                         @*@Html.DisplayFor(modelItem => item.PRICE)*@
-                                        @ViewBag.schedule2.LANGUAGE / @ViewBag.schedule2.DISPLAY_TYPE
+                                        @item.LANGUAGE / @item.DISPLAY_TYPE
                                     </td>
                                     <td>
-                                        @ViewBag.schedule2.HALL_ID
+                                        @item.HALL_ID
                                     </td>
                                     <td>
-                                        <a href="http://www.damai.cn" class="btn btn-default btn-xs active" role="button">购票</a>
+                                        <a href=@doubanLink() class="btn btn-default btn-xs active" role="button">购票</a>
                                     </td>
                                 </tr>
                             }
@@ -162,17 +174,17 @@
                                 <tr>
                                     <td>
                                         @*@Html.DisplayFor(modelItem => item.NAME)*@
-                                        @ViewBag.schedule3.START_TIME
+                                        @item.START_TIME.ToString("H:mm")
                                     </td>
                                     <td>
                                         @*@Html.DisplayFor(modelItem => item.PRICE)*@
-                                        @ViewBag.schedule3.LANGUAGE / @ViewBag.schedule3.DISPLAY_TYPE
+                                        @item.LANGUAGE / @item.DISPLAY_TYPE
                                     </td>
                                     <td>
-                                        @ViewBag.schedule3.HALL_ID
+                                        @item.HALL_ID
                                     </td>
                                     <td>
-                                        <a href="http://www.damai.cn" class="btn btn-default btn-xs active" role="button">购票</a>
+                                        <a href=@doubanLink() class="btn btn-default btn-xs active" role="button">购票</a>
                                     </td>
                                 </tr>
                             }

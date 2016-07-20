@@ -141,6 +141,8 @@
     <Compile Include="Business\BasicAuthAttribute.cs" />
     <Compile Include="Business\GetRoles.cs" />
     <Compile Include="Business\GetUser.cs" />
+    <Compile Include="Business\Management.cs" />
+    <Compile Include="Business\MovieDescription.cs" />
     <Compile Include="Business\Sale.cs" />
     <Compile Include="Business\Schedule_Movie.cs" />
     <Compile Include="Business\StaffManage.cs" />
@@ -1006,7 +1008,6 @@
     <Content Include="Scripts\scheduler.min.css" />
     <Content Include="Scripts\scheduler.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Views\Manager\dash.html" />
     <Content Include="Views\Schedule_Movie\getInfo.cshtml" />
     <Content Include="Views\Schedule_Movie\scheduler.min.js" />
     <Content Include="Views\Schedule_Movie\vertical-resource-view.html" />
@@ -1102,16 +1103,11 @@
     <Content Include="Views\Default\description.cshtml" />
     <Content Include="Views\Default\developer.cshtml" />
     <Content Include="Views\Default\login.cshtml" />
-    <Content Include="Views\Manager\discount.cshtml" />
     <Content Include="Views\Manager\index.cshtml" />
-    <Content Include="Views\Manager\login.cshtml" />
-    <Content Include="Views\Manager\member.cshtml" />
-    <Content Include="Views\Manager\movies.cshtml" />
-    <Content Include="Views\Manager\snack.cshtml" />
-    <Content Include="Views\Manager\staff.cshtml" />
     <Content Include="Views\Index.cshtml" />
     <Content Include="Views\Shared\clientLayout.cshtml" />
     <Content Include="Views\Shared\managerLayout.cshtml" />
+    <Content Include="Views\Sale\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

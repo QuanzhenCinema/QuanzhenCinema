@@ -9,8 +9,9 @@ using QuanzhenCinema.Models;
 
 namespace QuanzhenCinema.Business
 {
-    public class MovieDetailVIewModel
+    public class MovieDetailViewModel
     {
+        public int MOVIE_ID { get; set; }
         public String NAME { get; set; }
         public String IMAGE_PATH { get; set; }
         public String DESCRIPTION { get; set; }
@@ -39,9 +40,9 @@ namespace QuanzhenCinema.Business
             movie_id = Movie_Id;
         }
 
-        public List<MovieDetailVIewModel> getMovieDetails(){
-            String sql = "select name,image_path,description from movie natural join image where movie_id = "+movie_id;
-            List<MovieDetailVIewModel> movieDetails = db.Database.SqlQuery<MovieDetailVIewModel>(sql).ToList();
+        public List<MovieDetailViewModel> getMovieDetails(){
+            String sql = "select movie_id,name,image_path,description from movie natural join image where movie_id = "+movie_id;
+            List<MovieDetailViewModel> movieDetails = db.Database.SqlQuery<MovieDetailViewModel>(sql).ToList();
             return movieDetails;
         }
 
@@ -50,6 +51,12 @@ namespace QuanzhenCinema.Business
             String sql = "select category_name from movie natural join category_movie natural join category where movie_id = "+movie_id;
             List<String> category = db.Database.SqlQuery<String>(sql).ToList();
             return category;
+        }
+
+        public List<int> getLength(){
+            String sql = "select distinct length from display where MOVIE_ID="+movie_id;
+            List<int> length = db.Database.SqlQuery<int>(sql).ToList();
+            return length;
         }
 
         public List<ScheduleViewModel> getSchedule1(){

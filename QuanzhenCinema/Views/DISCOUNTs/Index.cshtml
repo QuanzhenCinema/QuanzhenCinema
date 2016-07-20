@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<QuanzhenCinema.Models.DISCOUNT>
 
 @{
-    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/managerLayout.cshtml";
+    ViewBag.Title = "折扣管理";
+    ViewBag.pageTitle = "折扣管理";
 }
-
-<h2>Index</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
