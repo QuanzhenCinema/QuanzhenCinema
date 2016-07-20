@@ -1,6 +1,7 @@
 ﻿@{
     Layout = "~/Views/Shared/clientLayout.cshtml";
-    ViewBag.Title = ViewBag.moviedetail[0].NAME;
+    if (ViewBag.moviedetail.Count == 0) { ViewBag.Title = "找不到该电影"; }
+    else { ViewBag.Title = ViewBag.moviedetail[0].NAME; }
 }
 @section Head{
     <link href=@Url.Content("~/Content/description.css") rel="stylesheet">
@@ -23,6 +24,7 @@
     }
     public string doubanLink()
     {
+        if (ViewBag.moviedetail.Count == 0) return "";
         return "https://movie.douban.com/subject/" + Convert.ToString(ViewBag.moviedetail[0].MOVIE_ID) + "/cinema/shanghai/";
     }
 }
