@@ -24,13 +24,13 @@ namespace QuanzhenCinema.Controllers{
             return json;
         }
         
-        public String getSchedules(int year, int month, int day,int Movie_id){
+        public ActionResult getSchedules(int year, int month, int day,int Movie_id){
             DateTime dt = new DateTime(year, month, day);
             Business.Sale s = new Business.Sale(dt,Movie_id);
             ViewBag.schedule = s.getSchedules();
-
             var json = new JavaScriptSerializer().Serialize(ViewBag.schedule);
-            return json;
+            ViewBag.json = json;
+            return View(ViewBag);
         }
 
         public String getSeats(int id){
