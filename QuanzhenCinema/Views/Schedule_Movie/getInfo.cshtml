@@ -9,7 +9,7 @@
 
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link href="~/Content/fullcalendar.min.css" rel="stylesheet">
+    <link href="~/Content/fullcalendar.min.css" rel="stylesheet">?
     <link href="~/Content/fullcalendar.print.css" rel="stylesheet" media="print">
     <link href="~/Content/scheduler.min.css" rel="stylesheet">
     <link href="~/Content/bootstrap.min.css" rel="stylesheet">
@@ -19,6 +19,8 @@
     <script src="~/Scripts/scheduler.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
     <script src="~/Scripts/layer-v2.4/layer/layer.js"></script>
+
+
 
     <!--<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">-->
     <!--<link href="fullcalendar.min.css" rel="stylesheet">-->
@@ -379,6 +381,7 @@
                 temp.resourceId = eventsList[i].resourceId;
                 temp.schedule_id = eventsList[i].schedule_id;
                 temp.display_id = eventsList[i].display_id;
+                temp.original_price = eventsList[i].original_price;
                 x.push(temp);
             }
             return x;
@@ -412,21 +415,31 @@
 //                $("#ORIGINAL_PRICE").attr("value", events[i].original_price);
 //                $("#START_SLOT").attr("value", 1);
 //                $("#END_SLOT").attr("value", 1);
+                start_ = events[i].start;
+                end_ = events[i].end;
+                start_1 = start_.substring(0, 10);
+                start_2 = start_.substring(11, 19);
+                end_1 = end_.substring(0, 10);
+                end_2 = end_.substring(11, 19);
+                start_ = start_1 + " " + start_2;
+                end_ = end_1 + " " + end_2;
                 $.ajax({
                     type: 'POST',
                     url: '/schedule_movie/addupdate',
                     data: {
+                        SCHEDULE_ID: events[i].schedule_id,
                         DISPLAY_ID: events[i].display_id,
-                        START_TIME: events[i].start,
-                        END_TIME: events[i].end,
+                        START_TIME: start_,
+                        END_TIME: end_,
                         HALL_ID: events[i].resourceId,
                         ORIGINAL_PRICE: events[i].original_price
                     },
                     beforeSend: function () {
 
                     },
-                    success: function () {
+                    success: function (res) {
                         console.log("success");
+                        console.log(res);
                     }
                 });
             }
@@ -464,10 +477,10 @@
     </table>
     <div id="calendar"></div>
     <form id="new_schedule" method="post" action="/schedule_movie/addupdate">
-        <input type="text" id="SCHEDULE_ID" name="SCHEDULE_ID" >
-        <input type="text" id="DISPLAY_ID" name="DISPLAY_ID" >
-        <input type="text" id="START_TIME" name="START_TIME" >
-        <input type="text" id="END_TIME" name="END_TIME" >
+        <input type="text" id="SCHEDULE_ID" name="SCHEDULE_ID">
+        <input type="text" id="DISPLAY_ID" name="DISPLAY_ID">
+        <input type="text" id="START_TIME" name="START_TIME">
+        <input type="text" id="END_TIME" name="END_TIME">
         <input type="text" id="HALL_ID" name="HALL_ID">
         <input type="text" id="ORIGINAL_PRICE" name="ORIGINAL_PRICE">
         <input type="text" id="START_SLOT" name="START_SLOT">

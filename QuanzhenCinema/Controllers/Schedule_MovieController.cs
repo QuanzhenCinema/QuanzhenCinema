@@ -28,6 +28,17 @@ namespace QuanzhenCinema.Controllers
             return View(ViewBag);
         }
 
+        [HttpPost]
+        public ActionResult Test(string name)
+        {
+            ViewBag.test = name;
+            return View(ViewBag);
+        }
+
+        //public ActionResult getInfo(){
+        //    return View();
+        //}
+
         public ActionResult AddUpdate()
         {
             //   ViewBag.DISPLAY_ID = new SelectList(db.DISPLAY, "DISPLAY_ID", "DISPLAY_ID");
