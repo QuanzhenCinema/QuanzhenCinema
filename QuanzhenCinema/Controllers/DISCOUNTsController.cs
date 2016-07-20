@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using QuanzhenCinema.Models;
 
@@ -15,12 +11,14 @@ namespace QuanzhenCinema.Controllers
         private Quanzhen db = new Quanzhen();
 
         // GET: DISCOUNTs
+        [BasicAuth]
         public ActionResult Index()
         {
             return View(db.DISCOUNT.ToList());
         }
 
         // GET: DISCOUNTs/Details/5
+        [BasicAuth]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -45,6 +43,7 @@ namespace QuanzhenCinema.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [BasicAuth]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "DISCOUNT_ID,RATE,NUM,START_DATE,REMAINING_DAY,WEEKDAY")] DISCOUNT dISCOUNT)
         {
@@ -59,6 +58,7 @@ namespace QuanzhenCinema.Controllers
         }
 
         // GET: DISCOUNTs/Edit/5
+        [BasicAuth]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -77,6 +77,7 @@ namespace QuanzhenCinema.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [BasicAuth]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "DISCOUNT_ID,RATE,NUM,START_DATE,REMAINING_DAY,WEEKDAY")] DISCOUNT dISCOUNT)
         {

@@ -27,10 +27,11 @@
         <div class="container">
             <span>
                 <a href="@Url.Action("Index","Home")"><img src="@Url.Content("~/Content/images/logo.png")"></a>
-                <form class="pull-right" role="search">
+                <form class="pull-right" role="search" action="/MoviesSelect" method="post">
                     <div class="form-group has-feedback">
-                        <input type="text" class="form-control" placeholder="search">
+                        <input type="text" class="form-control" id="searchString" name="searchString" placeholder="search">
                         <i class="form-control-feedback glyphicon glyphicon-search"></i>
+                        <button type="submit" name="ahh"></button>
                     </div>
                 </form>
             </span>
@@ -62,7 +63,7 @@
                 <div class="col-md-3">
                     @Html.ActionLink("开发人员", "developer", "Default")
                     <br>
-                    @Html.ActionLink("后台登录", "Login", "Login")
+                    @Html.ActionLink("后台登录", "Index", "Login")
                     @Html.ActionLink("经理后台", "index", "Manager")
                 </div>
             </div>

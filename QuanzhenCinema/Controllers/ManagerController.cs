@@ -12,6 +12,7 @@ namespace QuanzhenCinema.Controllers
     {
         private Quanzhen db;
         // GET: Manager
+        [BasicAuth]
         public ActionResult index(){
             db=new Quanzhen();
             Business.Management m=new Management();

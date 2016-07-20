@@ -20,6 +20,15 @@ namespace QuanzhenCinema.Controllers
             return View(db.MOVIE.ToList());
         }
 
+        [HttpPost]
+        public ActionResult Index(String str)
+        {
+            String sql = "select * from movie where name like '%" + str + "%'";
+            List<MOVIE> movie = db.Database.SqlQuery<MOVIE>(sql).ToList();
+            ViewBag.movie = movie;
+            return View(ViewBag);
+        }
+
         // GET: Movies/Details/5
         public ActionResult Details(int? id)
         {

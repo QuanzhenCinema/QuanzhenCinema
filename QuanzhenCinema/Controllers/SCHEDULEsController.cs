@@ -37,6 +37,7 @@ namespace QuanzhenCinema.Controllers
         }
 
         // GET: SCHEDULEs/Create
+        [BasicAuth]
         public ActionResult Create()
         {
             ViewBag.DISPLAY_ID = new SelectList(db.DISPLAY, "DISPLAY_ID", "DISPLAY_ID");

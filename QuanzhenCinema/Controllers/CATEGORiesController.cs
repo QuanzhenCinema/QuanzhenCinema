@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using QuanzhenCinema.Models;
-using System.Web.Script.Serialization;
 
 namespace QuanzhenCinema.Controllers
 {
@@ -20,8 +15,6 @@ namespace QuanzhenCinema.Controllers
         {
             return View(db.CATEGORY.ToList());
         }
-
-
 
         // GET: CATEGORies/Details/5
         public ActionResult Details(int? id)

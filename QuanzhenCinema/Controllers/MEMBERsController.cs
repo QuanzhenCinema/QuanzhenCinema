@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using QuanzhenCinema.Models;
 
@@ -15,12 +11,14 @@ namespace QuanzhenCinema.Controllers
         private Quanzhen db = new Quanzhen();
 
         // GET: MEMBERs
+        [BasicAuth]
         public ActionResult Index()
         {
             return View(db.MEMBER.ToList());
         }
 
         // GET: MEMBERs/Details/5
+        [BasicAuth]
         public ActionResult Details(string id)
         {
             if (id == null)
@@ -36,6 +34,7 @@ namespace QuanzhenCinema.Controllers
         }
 
         // GET: MEMBERs/Create
+        [BasicAuth]
         public ActionResult Create()
         {
             return View();
@@ -45,6 +44,7 @@ namespace QuanzhenCinema.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [BasicAuth]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "PHONE_NUMBER,NAME,REGISTER_DATE,REMAINING_DAY,CREDIT")] MEMBER mEMBER)
         {
@@ -77,6 +77,7 @@ namespace QuanzhenCinema.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [BasicAuth]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "PHONE_NUMBER,NAME,REGISTER_DATE,REMAINING_DAY,CREDIT")] MEMBER mEMBER)
         {
@@ -90,6 +91,7 @@ namespace QuanzhenCinema.Controllers
         }
 
         // GET: MEMBERs/Delete/5
+        [BasicAuth]
         public ActionResult Delete(string id)
         {
             if (id == null)

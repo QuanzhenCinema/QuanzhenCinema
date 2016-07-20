@@ -1,0 +1,50 @@
+﻿@model IEnumerable<QuanzhenCinema.Models.MOVIE>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/managerLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "/Create")
+    @using (Html.BeginForm())
+    {
+    <p>
+        Title:@Html.TextBox("SearchString")<br />
+        <input type="submit" value="Filter" />
+    </p>
+
+    }
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.ActionLink("NAME", "Index", new { id = ViewBag.NameSortParm })
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DESCRIPTION)
+            </th>
+            <th>
+                @Html.ActionLink("EXPIRE_DATE", "Index", new { id = ViewBag.DateSortParm })
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NAME)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DESCRIPTION)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EXPIRE_DATE)
+                </td>
+            </tr>
+        }
+
+    </table>
