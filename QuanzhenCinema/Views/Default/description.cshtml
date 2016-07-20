@@ -1,10 +1,10 @@
 ﻿@{
     Layout = "~/Views/Shared/clientLayout.cshtml";
+    @ViewBag.movie
 }
 <!DOCTYPE html>
 <html>
 <head>
-    <title>全真影院-影片详情</title>
     <link href="@Url.Content("~/Content/description.css")" rel="stylesheet">
 </head>
 <body>
@@ -58,9 +58,9 @@
             </div>
             <div class="col-md-11">
                 <ul class="nav nav-pills">
-                    <li role="presentation" data-toggle="tab" href="#day1" class="active"><a href="#">7.21(周四)</a></li>
-                    <li role="presentation" data-toggle="tab" href="#day2"><a href="#">7.22(周五)</a></li>
-                    <li role="presentation" data-toggle="tab" href="#day3"><a href="#">7.23(周六)</a></li>
+                    <li role="presentation" data-toggle="tab" href="#day1" class="active"><a href="#" id="day1"></a></li>
+                    <li role="presentation" data-toggle="tab" href="#day2"><a href="#" id="day2"></a></li>
+                    <li role="presentation" data-toggle="tab" href="#day3"><a href="#" id="day3"></a></li>
                 </ul>
                 <div class="tab-content">
                     <div id="day1" class="tab-pane fade in active">
@@ -72,7 +72,7 @@
                                 <th>放映厅</th>
                                 <th>购票</th>
                             </tr>
-                            <tr>
+                            @*<tr>
                                 <td>10:00</td>
                                 <td>中文/3D</td>
                                 <td>一号厅</td>
@@ -97,7 +97,7 @@
                                 <td>中文/3D</td>
                                 <td>三号厅</td>
                                 <td><a href="http://www.damai.cn" class="btn btn-default btn-xs active" role="button">购票</a>
-                            </tr>
+                            </tr>*@
                         </table>
                     </div>
                     <div id="day2" class="tab-pane fade">

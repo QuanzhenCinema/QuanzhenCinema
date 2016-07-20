@@ -1,6 +1,8 @@
 ﻿
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/managerLayout.cshtml";
+    ViewBag.pageTitle = "电影排片";
+    ViewBag.Title = "电影排片";
 }
 
 
@@ -13,6 +15,35 @@
     <link href="~/Content/fullcalendar.print.css" rel="stylesheet" media="print">
     <link href="~/Content/scheduler.min.css" rel="stylesheet">
     <link href="~/Content/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <input type="hidden" value="@ViewBag.json" id="json">
+    <button class="btn btn-default" onclick="toNextDay()">
+        Next Day
+    </button>
+    <button class="btn btn-default" onclick="toPreviousDay()">
+        Previous Day
+    </button>
+    <button class="btn btn-default" onclick="submitChange()">
+        Submit
+    </button>
+    <table class="table table-bordered">
+        <tbody id="movieList"></tbody>
+    </table>
+    <div id="calendar"></div>
+    <form id="new_schedule" method="post" action="/schedule_movie/addupdate">
+        <input type="text" id="SCHEDULE_ID" name="SCHEDULE_ID" >
+        <input type="text" id="DISPLAY_ID" name="DISPLAY_ID" >
+        <input type="text" id="START_TIME" name="START_TIME" >
+        <input type="text" id="END_TIME" name="END_TIME" >
+        <input type="text" id="HALL_ID" name="HALL_ID">
+        <input type="text" id="ORIGINAL_PRICE" name="ORIGINAL_PRICE">
+        <input type="text" id="START_SLOT" name="START_SLOT">
+        <input type="text" id="END_SLOT" name="END_SLOT">
+        <button type="submit">submit</button>
+    </form>
     <script src="~/Scripts/moment.min.js"></script>
     <script src="~/Scripts/jquery.min.js"></script>
     <script src="~/Scripts/fullcalendar.min.js"></script>
@@ -446,35 +477,6 @@
             margin: 50px auto;
         }
     </style>
-</head>
-
-<body>
-    <input type="hidden" value="@ViewBag.json" id="json">
-    <button class="btn btn-default" onclick="toNextDay()">
-        Next Day
-    </button>
-    <button class="btn btn-default" onclick="toPreviousDay()">
-        Previous Day
-    </button>
-    <button class="btn btn-default" onclick="submitChange()">
-        Submit
-    </button>
-    <table class="table table-bordered">
-        <tbody id="movieList"></tbody>
-    </table>
-    <div id="calendar"></div>
-    <form id="new_schedule" method="post" action="/schedule_movie/addupdate">
-        <input type="text" id="SCHEDULE_ID" name="SCHEDULE_ID" >
-        <input type="text" id="DISPLAY_ID" name="DISPLAY_ID" >
-        <input type="text" id="START_TIME" name="START_TIME" >
-        <input type="text" id="END_TIME" name="END_TIME" >
-        <input type="text" id="HALL_ID" name="HALL_ID">
-        <input type="text" id="ORIGINAL_PRICE" name="ORIGINAL_PRICE">
-        <input type="text" id="START_SLOT" name="START_SLOT">
-        <input type="text" id="END_SLOT" name="END_SLOT">
-        <button type="submit">submit</button>
-    </form>
-
 </body>
 
 
