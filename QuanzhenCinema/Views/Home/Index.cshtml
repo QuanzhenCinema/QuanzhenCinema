@@ -1,31 +1,94 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/clientLayout.cshtml";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>全真影院-首页</title>
+    <link href="@Url.Content("~/Content/index.css")" rel="stylesheet">
+</head>
+<body>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span12 text-center">
+                <div class="carousel slide" id="carousel-88857">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-88857" data-slide-to="0">
+                        </li>
+                        <li data-target="#carousel-88857" data-slide-to="1">
+                        </li>
+                        <li class="active" data-target="#carousel-88857" data-slide-to="2">
+                        </li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="item">
+                            <a href="@Url.Action("description","Default")">
+                                <img alt="" src="@Url.Content("~/Content/images/index/1min.jpg")" />
+                            </a>
+
+                        </div>
+                        <div class="item">
+                            <a href="@Url.Action("description","Default")">
+                                <img alt="" src="@Url.Content("~/Content/images/index/2min.jpg")" />
+                            </a>
+                        </div>
+                        <div class="item active">
+                            <a href="@Url.Action("description","Default")">
+                                <img alt="" src="@Url.Content("~/Content/images/index/3min.jpg")" />
+                            </a>
+                        </div>
+                    </div> <a class="left carousel-control" href="#carousel-88857" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> <a class="right carousel-control" href="#carousel-88857" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+
+    <div class="jumbotron">
+        <div class="container">
+            <div class="row clearfix">
+                <div>
+                    <h3>热门电影</h3>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 col-sm-3 col-xs-6">
+                        <a href="@Url.Action("description","Default")" class="thumbnail">
+                            <img alt="300x200" src="@Url.Content("~/Content/images/index/1.jpg")" />
+                        </a>
+                        <div class="caption">
+                            <span class="label label-danger">正在热映</span>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-6">
+                        <a href="@Url.Action("description","Default")" class="thumbnail">
+                            <img alt="300x200" src="@Url.Content("~/Content/images/index/2.jpg")" />
+                        </a>
+                        <div class="caption">
+                            <span class="label label-danger">正在热映</span>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-6">
+                        <a href="@Url.Action("description","Default")" class="thumbnail">
+                            <img alt="300x200" src="@Url.Content("~/Content/images/index/3.jpg")" />
+                        </a>
+                        <div class="caption">
+                            <span class="label label-danger">正在热映</span>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-6">
+                        <a href="@Url.Action("description","Default")" class="thumbnail">
+                            <img alt="300x200" src="@Url.Content("~/Content/images/index/4.jpg")" />
+                        </a>
+                        <div class="caption">
+                            <span class="label label-warning">即将上映</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+
+    <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/carousel.js"></script>
+</body>
+</html>

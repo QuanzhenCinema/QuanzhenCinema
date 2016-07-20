@@ -14,10 +14,18 @@ namespace QuanzhenCinema
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: " Schedule_Movie",
+                url: "{controller}/{action}/{Year}-{Month}-{Day}/{movie_id}",
+                defaults: new { Year = "2016", Month = "7", Day = "16", movie_id = UrlParameter.Optional }
+                );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
-            );
+                );
+
+
         }
     }
 }

@@ -1,0 +1,19 @@
+body {
+    background-color: #f3f3f3;
+    font-family: "Helvetica Neue","微软雅黑", Helvetica, Arial, sans-serif;
+}
+.header span{
+    display: block;
+    text-align: left;
+}
+
+.header .container{
+    margin-top:16px;
+    margin-bottom: 15px;
+}
+
+.form-group
+{
+    margin-top:60px;
+    margin-bottom: 0px;
+}

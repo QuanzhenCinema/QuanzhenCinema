@@ -1,0 +1,75 @@
+.jumbotron{
+    background: #8192BA;
+    background-size: auto;
+    height: auto;
+    margin-bottom:0;
+    padding:0;
+}
+.jumbotron .container{
+    margin-inside: 80px;
+    height:inherit;
+    padding: 20px;
+}
+
+.jumbotron p{
+    font-size: 14px;
+    font-weight: 200;
+    color: white;
+    margin-bottom: 0px;
+}
+
+.text-indent{
+    text-indent: 30px;
+}
+
+.jumbotron h2{
+    font-size: 24px;
+    color: white;
+    margin: auto;
+}
+
+.jumbotron h6{
+    font-size: 12px;
+    color: white;
+    margin-top: 10px;
+}
+.h5, h5 {
+    font-size: 16px;
+}
+
+.table th, td, tr{
+    text-align: center;
+}
+
+.table th {
+    background-color: #8192BA;
+    color: white;
+}
+.table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: #f7f7f7;
+}
+
+.table-hover > tbody > tr:hover {
+    background-color: #D4CFDB;
+}
+
+.btn-xs,
+.btn-group-xs > .btn {
+    padding: 1px 5px;
+    font-size: 13px;
+    line-height: 1.5;
+    border-radius: 3px;
+}
+
+
+.nav>li>a {
+    position: relative;
+    display: block;
+    padding: 5px 12px;
+    text-decoration:none;
+}
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+    color: #fff;
+    background-color: #8192BA;
+}

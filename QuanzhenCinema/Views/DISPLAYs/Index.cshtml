@@ -12,6 +12,9 @@
 <table class="table">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.DISPLAY_ID)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.MOVIE.NAME)
         </th>
         <th>
@@ -34,6 +37,9 @@
 
 @foreach (var item in Model) {
     <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DISPLAY_ID)
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.MOVIE.NAME)
         </td>
