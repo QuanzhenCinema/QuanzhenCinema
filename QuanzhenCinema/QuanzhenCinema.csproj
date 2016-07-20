@@ -1058,11 +1058,6 @@
     <Content Include="Views\Movies\Details.cshtml" />
     <Content Include="Views\Movies\Edit.cshtml" />
     <Content Include="Views\Movies\Index.cshtml" />
-    <Content Include="Views\ORDERs\Create.cshtml" />
-    <Content Include="Views\ORDERs\Delete.cshtml" />
-    <Content Include="Views\ORDERs\Details.cshtml" />
-    <Content Include="Views\ORDERs\Edit.cshtml" />
-    <Content Include="Views\ORDERs\Index.cshtml" />
     <Content Include="Views\SEATs\Create.cshtml" />
     <Content Include="Views\SEATs\Delete.cshtml" />
     <Content Include="Views\SEATs\Details.cshtml" />
