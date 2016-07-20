@@ -185,7 +185,6 @@
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Schedule_MovieController.cs" />
     <Compile Include="ViewModel\Schedule_Movie.cs" />
     <Compile Include="ViewModel\TestViewModel.cs" />
   </ItemGroup>
@@ -414,12 +413,12 @@
     <Content Include="Scripts\layer-v2.4\文档\layer社区.url" />
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Login\IndexAdmin.cshtml" />
-    <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\Login\tempLogin.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Default\description.cshtml" />
     <Content Include="Views\Default\developer.cshtml" />
-    <Content Include="Views\Default\login.cshtml" />
+    <Content Include="Views\Login\login.cshtml" />
     <Content Include="Views\Manager\discount.cshtml" />
     <Content Include="Views\Manager\index.cshtml" />
     <Content Include="Views\Manager\login.cshtml" />
