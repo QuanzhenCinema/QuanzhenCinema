@@ -18,8 +18,6 @@ namespace QuanzhenCinema.Business{
         public int ORIGINAL_PRICE { get; set; }
         public DateTime START_TIME { get; set; }
         public DateTime END_TIME { get; set; }
-        public int END_SLOT { get; set; }
-        public int START_SLOT { get; set; }
     }
     public class Seat_ViewModel{
         public int COLUMN_ID { get; set; }
@@ -57,7 +55,7 @@ namespace QuanzhenCinema.Business{
 
         public List<Schedule_ViewModel> getSchedules(){
             DateTime temp = d.AddDays(1);
-            String sql = "Select schedule_id,display_id,hall_id,original_price,start_time,end_time,end_slot,start_slot from schedule natural join display where movie_id=" + movie_id + " and start_time>to_date('" + d.Year + '-' + d.Month + '-' + d.Day + "','YYYY-MM-DD') and end_time<to_date('" + temp.Year + '-' + temp.Month + '-' + temp.Day + "','YYYY-MM-DD')";
+            String sql = "Select schedule_id,display_id,hall_id,original_price,start_time,end_time from schedule natural join display where movie_id=" + movie_id + " and start_time>to_date('" + d.Year + '-' + d.Month + '-' + d.Day + "','YYYY-MM-DD') and end_time<to_date('" + temp.Year + '-' + temp.Month + '-' + temp.Day + "','YYYY-MM-DD')";
             List<Schedule_ViewModel> schedule = db.Database.SqlQuery<Schedule_ViewModel>(sql).ToList();
             
             return schedule;
