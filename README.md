@@ -13,7 +13,7 @@
   　  
   `moviedetail` 对应的电影详情
 　    
-  格式为`(name, image_url, description)`（反正image给一张就行了  
+  格式为`(name, image_path, description)`（反正image给一张就行了  
   　  
   `categories`  该影片的所有category，只有`category`一个attribute  
   `schedule1` 该影片的当天排片  
