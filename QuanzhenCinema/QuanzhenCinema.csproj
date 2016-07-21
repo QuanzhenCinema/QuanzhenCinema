@@ -163,6 +163,7 @@
     <Compile Include="Controllers\SaleController.cs" />
     <Compile Include="Controllers\SCHEDULEsController.cs" />
     <Compile Include="Controllers\Schedule_MovieController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\SEATsController.cs" />
     <Compile Include="Controllers\SNACKsController.cs" />
     <Compile Include="Controllers\STAFFsController.cs" />
@@ -1088,6 +1089,7 @@
     <Content Include="Views\Login\IndexUser.cshtml" />
     <Content Include="Views\Login\LogOut.cshtml" />
     <Content Include="Views\Login\tempLogin.cshtml" />
+    <Content Include="Views\Search\search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
