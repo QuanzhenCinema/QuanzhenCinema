@@ -1,6 +1,4 @@
 ﻿@{ 
-    var gu = new QuanzhenCinema.Business.GetUser();
-    string str = gu.getUser().NAME;
     var today = "getInfo/"+DateTime.Now.ToString("yyyy-MM-dd");
 }
 <!DOCTYPE html>
@@ -37,7 +35,7 @@
         <div class="navbar-default sidebar" role="navigation">
             <div class="nav logo">
                 <a href=@Url.Action("index","Home")><span><img src=@Url.Content("~/Content/images/logo.png") /> </span></a>
-                <p></p>
+                @*<p><span>当前用户： </span>@usr</p>*@
             </div>
             <div class="sidebar-nav navbar-collapse">
                 <ul class="nav" id="side-menu">
