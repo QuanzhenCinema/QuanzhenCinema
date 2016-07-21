@@ -31,7 +31,6 @@
                     <div class="form-group has-feedback">
                         <input type="text" class="form-control" id="searchString" name="searchString" placeholder="search">
                         <i class="form-control-feedback glyphicon glyphicon-search"></i>
-                        <button type="submit" name="ahh"></button>
                     </div>
                 </form>
             </span>
@@ -45,7 +44,7 @@
             <div class="row">
                 <div class="col-md-3">
                     <h1>全真电影院</h1>
-                    <p>一个智障数据库项目，很全真</p>
+                    <p>一个很强的数据库项目，很全真</p>
                 </div>
                 <div class="col-md-3">
                     <address>
@@ -61,10 +60,10 @@
                     </address>
                 </div>
                 <div class="col-md-3">
-                    @Html.ActionLink("开发人员", "developer", "Default")
+                    <strong><a href="@Url.Action("developer", "Default")">开发人员</a></strong>
                     <br>
                     @Html.ActionLink("后台登录", "Index", "Login")
-                    @Html.ActionLink("经理后台", "index", "Manager")
+                    @*@Html.ActionLink("经理后台", "index", "Manager")*@
                 </div>
             </div>
         </div>
