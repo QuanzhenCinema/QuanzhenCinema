@@ -672,6 +672,7 @@
     <Content Include="Content\morrisjs\morris.css" />
     <Content Include="Content\morrisjs\morris.js" />
     <Content Include="Content\morrisjs\morris.min.js" />
+    <Content Include="Content\morrisjs\spec\morris_data.js" />
     <Content Include="Content\morrisjs\spec\specs.html" />
     <Content Include="Content\morrisjs\spec\viz\examples.js" />
     <Content Include="Content\morrisjs\spec\viz\exemplary\area0.png" />
