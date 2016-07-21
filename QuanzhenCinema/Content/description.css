@@ -45,6 +45,11 @@
     background-color: #8192BA;
     color: white;
 }
+
+.tab-content h1{
+    text-align:center;
+}
+
 .table-striped > tbody > tr:nth-of-type(odd) {
     background-color: #f7f7f7;
 }
