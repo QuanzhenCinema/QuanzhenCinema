@@ -671,6 +671,7 @@
     <Content Include="Content\morrisjs\examples\years.html" />
     <Content Include="Content\morrisjs\examples\_template.html" />
     <Content Include="Content\morrisjs\Gruntfile.js" />
+    <Content Include="Content\morrisjs\morris-data.js" />
     <Content Include="Content\morrisjs\morris.css" />
     <Content Include="Content\morrisjs\morris.js" />
     <Content Include="Content\morrisjs\morris.min.js" />

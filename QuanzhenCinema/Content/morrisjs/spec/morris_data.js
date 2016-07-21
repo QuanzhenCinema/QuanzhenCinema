@@ -2,60 +2,18 @@
 
     Morris.Area({
         element: 'morris-area-chart',
-        data: [{
-            period: '2010 Q1',
-            iphone: 2666,
-            ipad: null,
-            itouch: 2647
-        }, {
-            period: '2010 Q2',
-            iphone: 2778,
-            ipad: 2294,
-            itouch: 2441
-        }, {
-            period: '2010 Q3',
-            iphone: 4912,
-            ipad: 1969,
-            itouch: 2501
-        }, {
-            period: '2010 Q4',
-            iphone: 3767,
-            ipad: 3597,
-            itouch: 5689
-        }, {
-            period: '2011 Q1',
-            iphone: 6810,
-            ipad: 1914,
-            itouch: 2293
-        }, {
-            period: '2011 Q2',
-            iphone: 5670,
-            ipad: 4293,
-            itouch: 1881
-        }, {
-            period: '2011 Q3',
-            iphone: 4820,
-            ipad: 3795,
-            itouch: 1588
-        }, {
-            period: '2011 Q4',
-            iphone: 15073,
-            ipad: 5967,
-            itouch: 5175
-        }, {
-            period: '2012 Q1',
-            iphone: 10687,
-            ipad: 4460,
-            itouch: 2028
-        }, {
-            period: '2012 Q2',
-            iphone: 8432,
-            ipad: 5713,
-            itouch: 1791
-        }],
-        xkey: 'period',
-        ykeys: ['iphone', 'ipad', 'itouch'],
-        labels: ['iPhone', 'iPad', 'iPod Touch'],
+        data: [
+{ time: '2016-07-15', NeverGone: 230340, ColdWar: 307050 },
+{ time: '2016-07-16', NeverGone: 202220, ColdWar: 254070 },
+{ time: '2016-07-17', NeverGone: 199760, ColdWar: 166710 },
+{ time: '2016-07-18', NeverGone: 252150, ColdWar: 124550 },
+{ time: '2016-07-19', NeverGone: 320350, ColdWar: 92060 },
+{ time: '2016-07-20', NeverGone: 359800, ColdWar: 91306 },
+{ time: '2016-07-21', NeverGone: 400050, ColdWar: 100390 }
+        ],
+        xkey: 'time',
+        ykeys: ['NeverGone', 'ColdWar'],
+        labels: ['NeverGone', 'Total'],
         pointSize: 2,
         hideHover: 'auto',
         resize: true
@@ -63,16 +21,26 @@
 
     Morris.Donut({
         element: 'morris-donut-chart',
-        data: [{
-            label: "Download Sales",
-            value: 12
-        }, {
-            label: "In-Store Sales",
-            value: 30
-        }, {
-            label: "Mail-Order Sales",
-            value: 20
-        }],
+        //data: [{
+        //    label: "Download Sales",
+        //    value: 12
+        //}, {
+        //    label: "In-Store Sales",
+        //    value: 30
+        //}, {
+        //    label: "Mail-Order Sales",
+        //    value: 20
+        //}],
+        data: [
+    {
+        label: "豆瓣",
+        value: 0.86
+    },
+    {
+        label: "柜台",
+        value: 0.14
+    }
+        ],
         resize: true
     });
 
