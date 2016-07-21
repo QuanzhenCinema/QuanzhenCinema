@@ -1,18 +1,85 @@
-﻿
-@{
-    Layout = null;
-}
-
-<!DOCTYPE html>
-
-<html>
+﻿<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>getSchedules</title>
+    <meta charset="UTF-8">
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet">
+    <script src="~/Scripts/jquery-1.11.3.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/layer-v2.4/layer/layer.js"></script>
+
+    <!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
+    <!--<script src="js/jquery-1.11.3.min.js"></script>-->
+    <!--<script src="js/bootstrap.min.js"></script>-->
+    <!--<script src="layer-v2.4/layer/layer.js"></script>-->
+
+    <title>Title</title>
 </head>
 <body>
     <input type="hidden" id="json" value="@ViewBag.json">
-    <div> 
+    <h1 align="center" id="chosen_movie">选择场次</h1>
+    <div class="container" id="schedules">
+        <button class="btn btn-default">
+            <table class="table table-bordered" style="width: 200px">
+                <tr>
+                    <th>
+                        厅号
+                    </th>
+                    <td>
+                        1
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        开始时间
+                    </th>
+                    <td>
+                        18:30
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        结束时间
+                    </th>
+                    <td>
+                        21:00
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        价格
+                    </th>
+                    <td>
+                        50元
+                    </td>
+                </tr>
+            </table>
+        </button>
     </div>
+    <script>
+    var schedules = eval("(" + $("#json").val() + ")");
+    for (var i in schedules)
+    {
+        var button = document.createElement("button");
+        button.className = "btn btn-default";
+        button.id = schedules[i].SCHEDULE_ID;
+        var schedule_unit = document.createElement("table");
+        schedule_unit.className = "table table-bordered";
+        schedule_unit.style = "width: 200px;";
+        schedule_unit.id = schedules[i].SCHEDULE_ID + "_";
+        $("#"+schedule_unit.id).append("<tr><td>厅号</td><td>" + schedules[i].HALL_ID + "</td></tr>")
+        $("#"+schedule_unit.id).append("<tr><td>开始时间</td><td>" + schedules[i].START_TIME + "</td></tr>")
+        $("#"+schedule_unit.id).append("<tr><td>结束时间</td><td>" + schedules[i].END_TIME + "</td></tr>")
+        $("#"+schedule_unit.id).append("<tr><td>价格</td><td>" + schedules[i].ORIGINAL_PRICE + "</td></tr>")
+        button.appendChild(schedule_unit);
+        document.getElementById("schedules").appendChild(button);
+        $("#" + button.id).click(function () {
+            window.location.href = "/sale/getseats/" + $(this).attr("id");
+        });
+
+
+    }
+    </script>
+
 </body>
 </html>
