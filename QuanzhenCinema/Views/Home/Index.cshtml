@@ -2,12 +2,13 @@
     Layout = "~/Views/Shared/clientLayout.cshtml";
     ViewBag.Title = "首页";
 }
-
+@section Head{
+    <link href="@Url.Content("~/Content/index.css")" rel="stylesheet">
+}
 <!DOCTYPE html>
 <html>
 <head>
     <title>全真影院-首页</title>
-    <link href="@Url.Content("~/Content/index.css")" rel="stylesheet">
 </head>
 <body>
 
