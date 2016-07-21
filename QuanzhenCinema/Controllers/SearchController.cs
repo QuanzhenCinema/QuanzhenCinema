@@ -7,7 +7,6 @@ using QuanzhenCinema.Models;
 
 namespace QuanzhenCinema.Controllers
 {
-    [BasicAuth]
     public class SearchController : Controller
     {
         Quanzhen db = new Quanzhen();

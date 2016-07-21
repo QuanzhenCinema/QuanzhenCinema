@@ -152,7 +152,7 @@
             <div class="row">
                 <div class="col-md-3">
                     <h1>全真电影院</h1>
-                    <p>一个智障数据库项目，很全真</p>
+                    <p>一个很强的数据库项目，很全真</p>
                 </div>
                 <div class="col-md-3">
                     <address>
@@ -168,7 +168,9 @@
                     </address>
                 </div>
                 <div class="col-md-3">
-                    <strong><a href="developer.html">开发人员</a> </strong>
+                    <strong><a href="@Url.Action("developer", "Default")">开发人员</a></strong>
+                    <br />
+                    @Html.ActionLink("注销", "LogOut", "Login")
                 </div>
             </div>
         </div>

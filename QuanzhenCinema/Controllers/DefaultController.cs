@@ -8,7 +8,6 @@ using QuanzhenCinema.Business;
 
 namespace QuanzhenCinema.Controllers
 {
-    [BasicAuth]
     public class DefaultController : Controller
     {
         // GET: Default
