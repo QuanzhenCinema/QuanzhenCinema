@@ -7,24 +7,24 @@
 }
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("创建", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.RATE)
+            折扣率
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.NUM)
+            编号
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.START_DATE)
+            开始日期
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.REMAINING_DAY)
+            有效期
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DESCRIPTION)
+            描述
         </th>
         <th></th>
     </tr>
@@ -47,9 +47,9 @@
             @Html.DisplayFor(modelItem => item.DESCRIPTION)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.DISCOUNT_ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.DISCOUNT_ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.DISCOUNT_ID })
+            @Html.ActionLink("编辑", "Edit", new { id=item.DISCOUNT_ID }) |
+            @Html.ActionLink("详情", "Details", new { id=item.DISCOUNT_ID }) |
+            @Html.ActionLink("删除", "Delete", new { id=item.DISCOUNT_ID })
         </td>
     </tr>
 }

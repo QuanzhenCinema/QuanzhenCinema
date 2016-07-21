@@ -11,6 +11,7 @@ using System.Web.Script.Serialization;
 
 namespace QuanzhenCinema.Controllers
 {
+    [BasicAuth]
     public class Schedule_MovieController : Controller
     {
         Quanzhen db = new Quanzhen();

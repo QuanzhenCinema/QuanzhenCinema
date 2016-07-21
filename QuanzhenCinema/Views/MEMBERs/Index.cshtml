@@ -6,21 +6,21 @@
     Layout = "~/Views/Shared/managerLayout.cshtml";
 }
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("创建", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.NAME)
+            姓名
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.REGISTER_DATE)
+            注册日期
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.REMAINING_DAY)
+            到期时间
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CREDIT)
+            积分
         </th>
         <th></th>
     </tr>
@@ -40,9 +40,9 @@
             @Html.DisplayFor(modelItem => item.CREDIT)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.PHONE_NUMBER }) |
-            @Html.ActionLink("Details", "Details", new { id=item.PHONE_NUMBER }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.PHONE_NUMBER })
+            @Html.ActionLink("编辑", "Edit", new { id=item.PHONE_NUMBER }) |
+            @Html.ActionLink("详情", "Details", new { id=item.PHONE_NUMBER }) |
+            @Html.ActionLink("删除", "Delete", new { id=item.PHONE_NUMBER })
         </td>
     </tr>
 }

@@ -6,6 +6,7 @@ using QuanzhenCinema.Models;
 
 namespace QuanzhenCinema.Controllers
 {
+    [BasicAuth]
     public class MEMBERsController : Controller
     {
         private Quanzhen db = new Quanzhen();

@@ -10,6 +10,7 @@ using QuanzhenCinema.Models;
 
 namespace QuanzhenCinema.Controllers
 {
+    [BasicAuth]
     public class SCHEDULEsController : Controller
     {
         private Quanzhen db = new Quanzhen();

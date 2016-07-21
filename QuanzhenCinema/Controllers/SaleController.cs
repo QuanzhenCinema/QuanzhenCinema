@@ -6,7 +6,9 @@ using System.Web.Mvc;
 using QuanzhenCinema.Models;
 using System.Web.Script.Serialization;
 
-namespace QuanzhenCinema.Controllers{
+namespace QuanzhenCinema.Controllers
+{
+    [BasicAuth]
     public class SaleController : Controller{
         Quanzhen db = new Quanzhen();
 
