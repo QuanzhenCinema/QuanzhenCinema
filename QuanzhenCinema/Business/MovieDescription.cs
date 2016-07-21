@@ -15,6 +15,7 @@ namespace QuanzhenCinema.Business
         public String NAME { get; set; }
         public String IMAGE_PATH { get; set; }
         public String DESCRIPTION { get; set; }
+        public DateTime EXPIRE_DATE { get; set; }
     }
     public class TempScheduleViewModel
     {
@@ -41,7 +42,7 @@ namespace QuanzhenCinema.Business
         }
 
         public List<MovieDetailViewModel> getMovieDetails(){
-            String sql = "select movie_id,name,image_path,description from movie natural join image where movie_id = "+movie_id;
+            String sql = "select movie_id,name,image_path,description,expire_date from movie natural join image where movie_id = "+movie_id;
             List<MovieDetailViewModel> movieDetails = db.Database.SqlQuery<MovieDetailViewModel>(sql).ToList();
             return movieDetails;
         }
@@ -80,7 +81,7 @@ namespace QuanzhenCinema.Business
                     text += "2D";
                 }
                 if (temp[i].IS_IMAX == 1) {
-                    text += "/IMax";
+                    text += " IMax";
                 }
                 s.DISPLAY_TYPE = text;
                 schedule.Add(s);
