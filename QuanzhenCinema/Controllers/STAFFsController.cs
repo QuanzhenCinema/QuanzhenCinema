@@ -46,7 +46,7 @@ namespace QuanzhenCinema.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,PASSWORD,NAME,GENDER,POSITION")] STAFF sTAFF)
+        public ActionResult Create([Bind(Include = "ID,PASSWORD,NAME,GENDER,POSITION,ROLE")] STAFF sTAFF)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace QuanzhenCinema.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,PASSWORD,NAME,GENDER,POSITION")] STAFF sTAFF)
+        public ActionResult Edit([Bind(Include = "ID,PASSWORD,NAME,GENDER,POSITION,ROLE")] STAFF sTAFF)
         {
             if (ModelState.IsValid)
             {

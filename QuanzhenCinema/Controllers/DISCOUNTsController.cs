@@ -45,7 +45,7 @@ namespace QuanzhenCinema.Controllers
         [HttpPost]
         [BasicAuth]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "DISCOUNT_ID,RATE,NUM,START_DATE,REMAINING_DAY,WEEKDAY")] DISCOUNT dISCOUNT)
+        public ActionResult Create([Bind(Include = "DISCOUNT_ID,RATE,NUM,START_DATE,REMAINING_DAY,DESCRIPTION")] DISCOUNT dISCOUNT)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace QuanzhenCinema.Controllers
         [HttpPost]
         [BasicAuth]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "DISCOUNT_ID,RATE,NUM,START_DATE,REMAINING_DAY,WEEKDAY")] DISCOUNT dISCOUNT)
+        public ActionResult Edit([Bind(Include = "DISCOUNT_ID,RATE,NUM,START_DATE,REMAINING_DAY,DECRIPTION")] DISCOUNT dISCOUNT)
         {
             if (ModelState.IsValid)
             {
