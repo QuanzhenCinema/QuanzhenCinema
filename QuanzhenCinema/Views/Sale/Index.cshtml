@@ -219,7 +219,6 @@
         },
         //加入电影选择按钮
         success: function (res) {
-//                            alert(res);
             console.log(res);
             movies = eval("(" + res + ")");
             for (var i in movies){
@@ -238,7 +237,6 @@
                             });
                         },
                         success: function (res) {
-//                                            alert(res);
                             selected_schedule_id = this.innerHTML;
                             document.getElementById("schedules").innerHTML = "";
                             console.log(res);
@@ -263,8 +261,8 @@
                                             });
                                         },
                                         success: function (res) {
-//                                                            alert(res);
                                             console.log(res);
+                                            seats_took = res;
                                             initSeats();
                                             seats = eval("("+ res +")");
                                             layer.close(load_layer);
@@ -281,7 +279,6 @@
                             }
                             layer.close(load_layer);
                         }
-
                     });
                 };
                 document.getElementById("movies").appendChild(toappend);
@@ -294,6 +291,7 @@
 
     $('.spinner').spinner();
     var price = 80; //票价
+
     //计算总金额
     function recalculateTotal(sc) {
         var total = 0;
@@ -371,7 +369,7 @@
             }
         });
         //已售出的座位
-        sc.get(['1_2', '4_4','4_5','6_6','6_7','8_5','8_6','8_7','8_8', '10_1', '10_2']).status('unavailable');
+        sc.get(seats_taken).status('unavailable');
     }
 
     </script>
