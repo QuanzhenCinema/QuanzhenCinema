@@ -23,6 +23,9 @@
         <th>
             @Html.DisplayNameFor(model => model.REMAINING_DAY)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DESCRIPTION)
+        </th>
         <th></th>
     </tr>
 
@@ -39,6 +42,9 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.REMAINING_DAY)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DESCRIPTION)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.DISCOUNT_ID }) |

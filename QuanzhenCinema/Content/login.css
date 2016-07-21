@@ -25,7 +25,7 @@ body {
     text-align:center;
 }
 
-.btn{
+.jumbotron .btn{
     background-color: #453f5c;
     color:#fff;
     border:0;

@@ -115,7 +115,7 @@ namespace QuanzhenCinema.Business
                 }
                 if (temp[i].IS_IMAX == 1)
                 {
-                    text += "/IMax";
+                    text += " IMax";
                 }
                 s.DISPLAY_TYPE = text;
                 schedule.Add(s);
@@ -149,7 +149,7 @@ namespace QuanzhenCinema.Business
                 }
                 if (temp[i].IS_IMAX == 1)
                 {
-                    text += "/IMax";
+                    text += " IMax";
                 }
                 s.DISPLAY_TYPE = text;
                 schedule.Add(s);

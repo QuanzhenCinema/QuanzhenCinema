@@ -3,8 +3,9 @@
     ViewBag.Title = "搜索结果";
 }
 @functions{
-    public string isOnline(DateTime expireDate){
-        if (DateTime.Compare(DateTime.Now, expireDate)>0)
+    public string isOnline(DateTime expireDate)
+    {
+        if (DateTime.Compare(DateTime.Now, expireDate) > 0)
         {
             return "已经下线";
         }
@@ -17,9 +18,12 @@
 
 @section Head{
     <link href="@Url.Content("~/Content/search.css")" rel="stylesheet">
+    @if (ViewBag.movies.Count == 0)
+    {
+        <link href="@Url.Content("~/Content/developer.css")" rel="stylesheet">}
 }
-        @ViewBag.searchString
-        <!DOCTYPE html>
+@ViewBag.searchString
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <title>全真影院-搜索结果</title>
@@ -27,25 +31,32 @@
 <body>
 
 
-@foreach (var item in ViewBag.movies){
-    var link1 = "description/" + Convert.ToString(item.MOVIE_ID);
-    <div class="media">
-        <div class="col-xs-4">
+    @foreach (var item in ViewBag.movies)
+    {
+        var link1 = "description/" + Convert.ToString(item.MOVIE_ID);
+        <div class="media">
+            <div class="col-xs-4">
 
-        </div>
-        <div class="col-xs-8">
-            <div class="media-body">
-                <a href="@Url.Action(link1,"Default")">@item.NAME</a>
-                <span class="label label-danger">@isOnline(item.EXPIRE_DATE)</span>
-                <br>
-                @item.DESCRIPTION
+            </div>
+            <div class="col-xs-8">
+                <div class="media-body">
+                    <a href="@Url.Action(link1,"Default")">@item.NAME</a>
+                    <span class="label label-danger">@isOnline(item.EXPIRE_DATE)</span>
+                    <br>
+                    @item.DESCRIPTION
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="col-xs-4">
-        <hr align=left width=770>
-    </div>
-}
+        <div class="col-xs-4">
+            <hr align=left width=770>
+        </div>
+    }
+    @if (ViewBag.movies.Count == 0)
+    {
+        <div class="jumbotron">
+            <h2>你仿佛来到了没有电影的黑暗</h2>
+        </div>
+    }
 </body>
 </html>

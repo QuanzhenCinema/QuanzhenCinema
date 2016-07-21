@@ -5,7 +5,19 @@ body {
 .jumbotron {
     padding-top: 18px;
     padding-bottom: 18px;
+    margin-bottom:0px;
+    min-height:420px;
 }
+
+.jumbotron h2{
+    margin-top:180px;
+    text-align:center;
+}
+
+.jumbotron .text-center{
+    padding-top:15px;
+}
+
 .jumbotron p {
     margin-bottom: 15px;
     font-size: 30px;
@@ -19,7 +31,15 @@ body {
 }
 
 .lead {
-    font-size: 17px;
+    font-size: 21px;
     font-weight: 300;
-    line-height: 1.8;
+    line-height: 2;
+}
+
+.footer {
+    background-color:#F3F3F3;
+}
+
+.footer .container{
+    padding-top:20px;
 }
