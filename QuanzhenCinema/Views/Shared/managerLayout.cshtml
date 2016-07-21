@@ -43,7 +43,10 @@
                         <a href=@Url.Action("index","Manager")><i class="fa fa-dashboard fa-fw"></i>　数据总览</a>
                     </li>
                     <li>
-                        <a href=@Url.Action(today,"Schedule_Movie")><i class="fa fa-calendar fa-fw"></i>　电影排片</a>
+                        <a href=@Url.Action("Index", "MOVIEs")><i class="fa fa-user fa-fw"></i>　电影管理</a>
+                    </li>
+                    <li>
+                        <a href=@Url.Action(today,"Schedule_Movie")><i class="fa fa-calendar fa-fw"></i>　排片管理</a>
                     </li>
                     <li>
                         <a href=@Url.Action("Index","DISCOUNTs")><i class="fa fa-money fa-fw"></i>　折扣管理</a>
@@ -98,12 +101,5 @@
     @*<script src="../dist/js/sb-admin-2.js"></script>*@
     <script src="@Url.Content("~/Scripts/sb-admin-2.js")"></script>
 
-
-
-
-
-
-
-        
         </body>
 </html>
