@@ -61,11 +61,11 @@
             },
 
             header: {
-//                left: '',
-                left: 'prev,next today',
+                left: '',
+//                left: 'prev,next today',
                 center: 'title',
-//                right: ''
-                right: 'agendaDay,agendaTwoDay,agendaWeek,month'
+                right: ''
+//                right: 'agendaDay,agendaTwoDay,agendaWeek,month'
             },
             views: {
                 agendaTwoDay: {
@@ -390,13 +390,28 @@
         }
 
         function toNextDay() {
-            today = new Date(today.getTime()+24*3600*1000);
 
+            var current = document.location.href;
+            current = current.substring(0, 46);
+            window.location.href = current + addDay(1)
         }
 
         function toPreviousDay() {
-            today = new Date(today.getTime()-24*3600*1000);
+            var current = document.location.href;
+            current = current.substring(0, 46);
+            window.location.href = current + addDay(-1);
         }
+
+        function addDay(num) {
+            var local_url = document.location.href;
+            var pos = local_url.lastIndexOf('/');
+            var date = local_url.substring(pos+1, local_url.length);
+            date += " 00:00:00";
+            var new_date = new Date(date).getTime() + num*24*3600*1000;
+            var result = formatTime(new_date).substring(0, 10);
+            return result;
+        }
+
         var load_layer = [];
         function submitChange() {
             events = getEvents();
@@ -453,8 +468,9 @@
             max-width: 900px;
             margin: 50px auto;
         }
+
         .daybtn {
-            margin:auto;
+            margin: auto;
         }
     </style>
 </head>
@@ -462,14 +478,14 @@
 <body>
     <input type="hidden" value="@ViewBag.json" id="json">
     <div class="daybtn">
-        <button class="btn btn-default" onclick="toNextDay()">
-            Next Day
-        </button>
         <button class="btn btn-default" onclick="toPreviousDay()">
             Previous Day
         </button>
         <button class="btn btn-default" onclick="submitChange()">
             Submit
+        </button>
+        <button class="btn btn-default" onclick="toNextDay()">
+            Next Day
         </button>
     </div>
     <table class="table table-bordered">
@@ -477,16 +493,16 @@
     </table>
     <div id="calendar"></div>
     @*<form id="new_schedule" method="post" action="/schedule_movie/addupdate">
-        <input type="text" id="SCHEDULE_ID" name="SCHEDULE_ID">
-        <input type="text" id="DISPLAY_ID" name="DISPLAY_ID">
-        <input type="text" id="START_TIME" name="START_TIME">
-        <input type="text" id="END_TIME" name="END_TIME">
-        <input type="text" id="HALL_ID" name="HALL_ID">
-        <input type="text" id="ORIGINAL_PRICE" name="ORIGINAL_PRICE">
-        <input type="text" id="START_SLOT" name="START_SLOT">
-        <input type="text" id="END_SLOT" name="END_SLOT">
-        <button type="submit">submit</button>
-    </form>*@
+            <input type="text" id="SCHEDULE_ID" name="SCHEDULE_ID">
+            <input type="text" id="DISPLAY_ID" name="DISPLAY_ID">
+            <input type="text" id="START_TIME" name="START_TIME">
+            <input type="text" id="END_TIME" name="END_TIME">
+            <input type="text" id="HALL_ID" name="HALL_ID">
+            <input type="text" id="ORIGINAL_PRICE" name="ORIGINAL_PRICE">
+            <input type="text" id="START_SLOT" name="START_SLOT">
+            <input type="text" id="END_SLOT" name="END_SLOT">
+            <button type="submit">submit</button>
+        </form>*@
 
 </body>
 
