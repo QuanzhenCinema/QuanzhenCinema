@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace QuanzhenCinema.Controllers
 {
+    [BasicAuth]
     public class MoviesSelectController : Controller
     {
         Quanzhen db = new Quanzhen();

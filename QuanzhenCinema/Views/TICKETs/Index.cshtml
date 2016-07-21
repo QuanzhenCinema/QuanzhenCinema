@@ -9,25 +9,25 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
+    <title>索引</title>
 </head>
 <body>
     <p>
-        @Html.ActionLink("Create New", "Create")
+        @Html.ActionLink("创建", "Create")
     </p>
     <table class="table">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.MYORDER.ORDER_ID)
+                订单号
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.SCHEDULE.SCHEDULE_ID)
+                排片号
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.SEAT.COLUMN_ID)
+                列号
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.PRICE)
+                价格
             </th>
             <th></th>
         </tr>
@@ -47,9 +47,9 @@
                 @Html.DisplayFor(modelItem => item.PRICE)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.TICKET_ID }) |
-                @Html.ActionLink("Details", "Details", new { id=item.TICKET_ID }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.TICKET_ID })
+                @Html.ActionLink("编辑", "Edit", new { id=item.TICKET_ID }) |
+                @Html.ActionLink("详情", "Details", new { id=item.TICKET_ID }) |
+                @Html.ActionLink("删除", "Delete", new { id=item.TICKET_ID })
             </td>
         </tr>
     }

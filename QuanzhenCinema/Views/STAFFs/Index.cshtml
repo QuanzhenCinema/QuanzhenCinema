@@ -7,27 +7,27 @@
 }
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("创建", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.ID)
+            员工号
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.PASSWORD)
+            密码
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.NAME)
+            名称
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.GENDER)
+            性别
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.POSITION)
+            职位
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ROLE)
+            角色
         </th>
         <th></th>
     </tr>
@@ -53,9 +53,9 @@
             @Html.DisplayFor(modelItem => item.ROLE)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+            @Html.ActionLink("编辑", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("详情", "Details", new { id=item.ID }) |
+            @Html.ActionLink("删除", "Delete", new { id=item.ID })
         </td>
     </tr>
 }

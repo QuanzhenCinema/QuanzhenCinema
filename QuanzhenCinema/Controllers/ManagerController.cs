@@ -8,6 +8,7 @@ using QuanzhenCinema.Models;
 
 namespace QuanzhenCinema.Controllers
 {
+    [BasicAuth]
     public class ManagerController : Controller
     {
         //private Quanzhen db;

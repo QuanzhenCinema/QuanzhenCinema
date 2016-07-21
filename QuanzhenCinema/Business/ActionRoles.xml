@@ -1,9 +1,82 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Roles>
+  <Controller name="CATAGORies">
+    <Action name="Index">admin</Action>
+    <Action name="Create">admin</Action>
+    <Action name="Delete">admin</Action>
+    <Action name="Details">admin</Action>
+    <Action name="Edit">admin</Action>
+  </Controller>
+  <Controller name="Default">
+    <Action name="developer"></Action>
+    <Action name="description"></Action>
+  </Controller>
+  <Controller name="DISCOUNTs">
+    <Action name="Index">admin</Action>
+    <Action name="Create">admin</Action>
+    <Action name="Delete">admin</Action>
+    <Action name="Details">admin</Action>
+    <Action name="Edit">admin</Action>
+  </Controller>
+  <Controller name="DISPLAYs">
+    <Action name="Index">admin</Action>
+    <Action name="Create">admin</Action>
+    <Action name="Delete">admin</Action>
+    <Action name="Details">admin</Action>
+    <Action name="Edit">admin</Action>
+  </Controller>
+  <Controller name="HALLs">
+    <Action name="Index">admin</Action>
+    <Action name="Create">admin</Action>
+    <Action name="Delete">admin</Action>
+    <Action name="Details">admin</Action>
+    <Action name="Edit">admin</Action>
+  </Controller>
+  <Controller name="IMAGESs">
+    <Action name="Index">admin</Action>
+    <Action name="Create">admin</Action>
+    <Action name="Delete">admin</Action>
+    <Action name="Details">admin</Action>
+    <Action name="Edit">admin</Action>
+  </Controller>
   <Controller name="Login">
     <Action name="Index"></Action>
     <Action name="IndexUser">user</Action>
     <Action name="IndexAdmin">admin</Action>
+    <Action name="LogOut">user, admin</Action>
+  </Controller>
+  <Controller name="Manager">
+    <Action name="index">admin</Action>
+  </Controller>
+  <Controller name="MEMBERs">
+    <Action name="Index">admin</Action>
+    <Action name="Create">admin</Action>
+    <Action name="Delete">admin</Action>
+    <Action name="Details">admin</Action>
+    <Action name="Edit">admin</Action>
+  </Controller>
+  <Controller name="Movies">
+    <Action name="Index">admin</Action>
+    <Action name="Create">admin</Action>
+    <Action name="Delete">admin</Action>
+    <Action name="Details">admin</Action>
+    <Action name="Edit">admin</Action>
+  </Controller>
+  <Controller name="MYORDERs">
+    <Action name="Index">admin</Action>
+    <Action name="Create">admin</Action>
+    <Action name="Delete">admin</Action>
+    <Action name="Details">admin</Action>
+    <Action name="Edit">admin</Action>
+  </Controller>
+  <Controller name="Sale">
+    <Action name="getSchedules">user</Action>
+    <Action name="Index">user</Action>
+  </Controller>
+  <Controller name="Schedule_Movie">
+    <Action name="getInfo">admin</Action>
+    <Action name="scheduler.min">admin</Action>
+    <Action name="vertical-resource-view">admin</Action>
   </Controller>
   <Controller name="SCHEDULEs">
     <Action name="Index">admin</Action>
@@ -12,10 +85,7 @@
     <Action name="Details">admin</Action>
     <Action name="Edit">admin</Action>
   </Controller>
-  <Controller name="MANAGER">
-    <Action name="index">admin</Action>
-  </Controller>
-  <Controller name="DISCOUNTs">
+  <Controller name="SEATs">
     <Action name="Index">admin</Action>
     <Action name="Create">admin</Action>
     <Action name="Delete">admin</Action>
@@ -36,7 +106,7 @@
     <Action name="Details">admin</Action>
     <Action name="Edit">admin</Action>
   </Controller>
-  <Controller name="MEMBERs">
+  <Controller name="TICKETs">
     <Action name="Index">admin</Action>
     <Action name="Create">admin</Action>
     <Action name="Delete">admin</Action>

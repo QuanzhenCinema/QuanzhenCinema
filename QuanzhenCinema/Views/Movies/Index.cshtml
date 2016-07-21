@@ -7,21 +7,21 @@
 }
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("创建", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.MOVIE_ID)
+            电影号
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.NAME)
+            电影名
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DESCRIPTION)
+            电影描述
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.EXPIRE_DATE)
+            下映日期
         </th>
         <th></th>
     </tr>
@@ -41,9 +41,9 @@
             @Html.DisplayFor(modelItem => item.EXPIRE_DATE)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MOVIE_ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MOVIE_ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MOVIE_ID })
+            @Html.ActionLink("编辑", "Edit", new { id=item.MOVIE_ID }) |
+            @Html.ActionLink("详情", "Details", new { id=item.MOVIE_ID }) |
+            @Html.ActionLink("删除", "Delete", new { id=item.MOVIE_ID })
         </td>
     </tr>
 }

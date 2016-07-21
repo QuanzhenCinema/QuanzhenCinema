@@ -4,24 +4,24 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>索引</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("创建", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.CAPACITY)
+            容量
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.IS_3D)
+            3D
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.IS_DOLAB)
+            杜比
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.IS_IMAX)
+            巨幕
         </th>
         <th></th>
     </tr>
@@ -41,9 +41,9 @@
             @Html.DisplayFor(modelItem => item.IS_IMAX)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.HALL_ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.HALL_ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.HALL_ID })
+            @Html.ActionLink("编辑", "Edit", new { id=item.HALL_ID }) |
+            @Html.ActionLink("详情", "Details", new { id=item.HALL_ID }) |
+            @Html.ActionLink("删除", "Delete", new { id=item.HALL_ID })
         </td>
     </tr>
 }
