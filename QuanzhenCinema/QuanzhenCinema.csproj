@@ -163,6 +163,7 @@
     <Compile Include="Controllers\SaleController.cs" />
     <Compile Include="Controllers\SCHEDULEsController.cs" />
     <Compile Include="Controllers\Schedule_MovieController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\SEATsController.cs" />
     <Compile Include="Controllers\SNACKsController.cs" />
     <Compile Include="Controllers\STAFFsController.cs" />
@@ -673,6 +674,7 @@
     <Content Include="Content\morrisjs\morris.css" />
     <Content Include="Content\morrisjs\morris.js" />
     <Content Include="Content\morrisjs\morris.min.js" />
+    <Content Include="Content\morrisjs\spec\morris_data.js" />
     <Content Include="Content\morrisjs\spec\specs.html" />
     <Content Include="Content\morrisjs\spec\viz\examples.js" />
     <Content Include="Content\morrisjs\spec\viz\exemplary\area0.png" />
@@ -1095,6 +1097,7 @@
     <Content Include="Views\Login\IndexUser.cshtml" />
     <Content Include="Views\Login\LogOut.cshtml" />
     <Content Include="Views\Login\tempLogin.cshtml" />
+    <Content Include="Views\Search\search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

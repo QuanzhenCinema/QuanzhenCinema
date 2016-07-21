@@ -6,10 +6,8 @@
 
 <html>
 <head>
-
-
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link href="~/Content/fullcalendar.min.css" rel="stylesheet">?
+    <link href="~/Content/fullcalendar.min.css" rel="stylesheet">
     <link href="~/Content/fullcalendar.print.css" rel="stylesheet" media="print">
     <link href="~/Content/scheduler.min.css" rel="stylesheet">
     <link href="~/Content/bootstrap.min.css" rel="stylesheet">
@@ -19,9 +17,6 @@
     <script src="~/Scripts/scheduler.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
     <script src="~/Scripts/layer-v2.4/layer/layer.js"></script>
-
-
-
     <!--<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">-->
     <!--<link href="fullcalendar.min.css" rel="stylesheet">-->
     <!--<link href="fullcalendar.print.css" rel="stylesheet" media="print">-->
@@ -458,25 +453,30 @@
             max-width: 900px;
             margin: 50px auto;
         }
+        .daybtn {
+            margin:auto;
+        }
     </style>
 </head>
 
 <body>
     <input type="hidden" value="@ViewBag.json" id="json">
-    <button class="btn btn-default" onclick="toNextDay()">
-        Next Day
-    </button>
-    <button class="btn btn-default" onclick="toPreviousDay()">
-        Previous Day
-    </button>
-    <button class="btn btn-default" onclick="submitChange()">
-        Submit
-    </button>
+    <div class="daybtn">
+        <button class="btn btn-default" onclick="toNextDay()">
+            Next Day
+        </button>
+        <button class="btn btn-default" onclick="toPreviousDay()">
+            Previous Day
+        </button>
+        <button class="btn btn-default" onclick="submitChange()">
+            Submit
+        </button>
+    </div>
     <table class="table table-bordered">
         <tbody id="movieList"></tbody>
     </table>
     <div id="calendar"></div>
-    <form id="new_schedule" method="post" action="/schedule_movie/addupdate">
+    @*<form id="new_schedule" method="post" action="/schedule_movie/addupdate">
         <input type="text" id="SCHEDULE_ID" name="SCHEDULE_ID">
         <input type="text" id="DISPLAY_ID" name="DISPLAY_ID">
         <input type="text" id="START_TIME" name="START_TIME">
@@ -486,7 +486,7 @@
         <input type="text" id="START_SLOT" name="START_SLOT">
         <input type="text" id="END_SLOT" name="END_SLOT">
         <button type="submit">submit</button>
-    </form>
+    </form>*@
 
 </body>
 

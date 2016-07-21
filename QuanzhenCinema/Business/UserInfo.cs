@@ -119,13 +119,14 @@ namespace QuanzhenCinema.Business
 //        public int authority;
         public string POSITION;
         public string ROLE;
+        public string NAME;
 
         // 如果还有其它的用户信息，可以继续添加。
 
         public override string ToString()
         {
-            return string.Format("ID: {0}, PASSWORD: {1}, POSITION: {2}, ROLE: {3}",
-                ID, PASSWORD, POSITION, ROLE);
+            return string.Format("ID: {0}, PASSWORD: {1}, POSITION: {2}, ROLE: {3}, NAME: {4}",
+                ID, PASSWORD, POSITION, ROLE, NAME);
         }
 
         #region IPrincipal Members

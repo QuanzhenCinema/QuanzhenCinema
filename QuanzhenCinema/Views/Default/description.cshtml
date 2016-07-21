@@ -27,6 +27,13 @@
         if (ViewBag.moviedetail.Count == 0) return "";
         return "https://movie.douban.com/subject/" + Convert.ToString(ViewBag.moviedetail[0].MOVIE_ID) + "/cinema/shanghai/";
     }
+    public string isOnline()
+    {
+        if (ViewBag.moviedetail.Count == 0) return "";
+        if (DateTime.Compare(DateTime.Now, ViewBag.moviedetail[0].EXPIRE_DATE) > 0)
+            return "已经下映";
+        else return "正在热映";
+    }
 }
 @{
     var date1 = DateTime.Now;
@@ -48,7 +55,7 @@
             <div class="row">
                 <div class="col-md-3">
                     <img src="@ViewBag.moviedetail[0].IMAGE_PATH" height="310" width="210" />
-                    <h6>正在热映</h6>
+                    <h6>@isOnline()</h6>
                 </div>
                 <div class="col-md-9">
                     <h2>@ViewBag.moviedetail[0].NAME</h2>
