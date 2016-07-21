@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using QuanzhenCinema.Models;
 
@@ -17,8 +13,8 @@ namespace QuanzhenCinema.Controllers
         // GET: IMAGEs
         public ActionResult Index()
         {
-            var iMAGE = db.IMAGE.Include(i => i.MOVIE);
-            return View(iMAGE.ToList());
+            //var iMAGE = db.IMAGE.Include(i => i.MOVIE);
+            return View(db.IMAGE.ToList());
         }
 
         // GET: IMAGEs/Details/5
@@ -39,7 +35,7 @@ namespace QuanzhenCinema.Controllers
         // GET: IMAGEs/Create
         public ActionResult Create()
         {
-            ViewBag.MOVIE_ID = new SelectList(db.MOVIE, "MOVIE_ID", "NAME");
+            //ViewBag.MOVIE_ID = new SelectList(db.MOVIE, "MOVIE_ID", "NAME");
             return View();
         }
 
@@ -57,7 +53,7 @@ namespace QuanzhenCinema.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.MOVIE_ID = new SelectList(db.MOVIE, "MOVIE_ID", "NAME", iMAGE.MOVIE_ID);
+            //ViewBag.MOVIE_ID = new SelectList(db.MOVIE, "MOVIE_ID", "NAME", iMAGE.MOVIE_ID);
             return View(iMAGE);
         }
 
@@ -73,7 +69,7 @@ namespace QuanzhenCinema.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.MOVIE_ID = new SelectList(db.MOVIE, "MOVIE_ID", "NAME", iMAGE.MOVIE_ID);
+            //ViewBag.MOVIE_ID = new SelectList(db.MOVIE, "MOVIE_ID", "NAME", iMAGE.MOVIE_ID);
             return View(iMAGE);
         }
 
@@ -90,7 +86,7 @@ namespace QuanzhenCinema.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.MOVIE_ID = new SelectList(db.MOVIE, "MOVIE_ID", "NAME", iMAGE.MOVIE_ID);
+            //ViewBag.MOVIE_ID = new SelectList(db.MOVIE, "MOVIE_ID", "NAME", iMAGE.MOVIE_ID);
             return View(iMAGE);
         }
 

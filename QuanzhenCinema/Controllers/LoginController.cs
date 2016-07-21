@@ -87,7 +87,7 @@ namespace QuanzhenCinema.Controllers
                 string UserData = new JavaScriptSerializer().Serialize(userinfo);
                 MyFormsPrincipal<UserInfo>.SignIn(userinfo.ID, userinfo, 100);
                 ViewBag.LoginState = HttpContext.User.Identity.Name + "已登录。";
-                Response.Redirect(userinfo.ROLE == "admin" ? "~/Manager" : "~/Home");
+                Response.Redirect(userinfo.ROLE == "admin" ? "~/Manager" : "~/sale");
             }
             return View();
         }

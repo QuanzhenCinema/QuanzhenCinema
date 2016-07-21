@@ -79,6 +79,13 @@
                             <div id="seat-map">
                                 <div class="front" align="center"><h3>屏幕</h3></div>
                             </div>
+                            <div class="booking-details">
+                                <!--<p>影片：大鱼海棠&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp时间：07月21日&nbsp&nbsp&nbsp21:00</p>-->
+                                <p>座位：</p>
+                                <ul id="selected-seats"></ul>
+                                <p>票数：<span id="counter">0</span></p>
+                                <p>总计：<b>￥<span id="total">0</span></b></p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -282,6 +289,9 @@
             layer.close(load_layer);
         }
     });
+
+
+
     $('.spinner').spinner();
     var price = 80; //票价
     //计算总金额
@@ -332,7 +342,7 @@
                     [ 'a', 'unavailable', '已售出']
                 ]
             },
-            click : function () { //点击事件
+            click: function () { //点击事件
                 if (this.status() == 'available') { //可选座
                     $('<li>'+this.settings.id+'座</li>')
                             .attr('id', 'cart-item-'+this.settings.id)
@@ -341,9 +351,9 @@
 
                     $counter.text(sc.find('selected').length+1);
                     $total.text(recalculateTotal(sc)+price);
+
                     return 'selected';
-                }
-                else if (this.status() == 'selected') { //已选中
+                } else if (this.status() == 'selected') { //已选中
                     //更新数量
                     $counter.text(sc.find('selected').length-1);
                     //更新总计
@@ -353,11 +363,9 @@
                     $('#cart-item-'+this.settings.id).remove();
                     //可选座
                     return 'available';
-                }
-                else if (this.status() == 'unavailable') { //已售出
+                } else if (this.status() == 'unavailable') { //已售出
                     return 'unavailable';
-                }
-                else {
+                } else {
                     return this.style();
                 }
             }

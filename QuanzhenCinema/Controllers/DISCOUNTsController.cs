@@ -6,19 +6,18 @@ using QuanzhenCinema.Models;
 
 namespace QuanzhenCinema.Controllers
 {
+    [BasicAuth]
     public class DISCOUNTsController : Controller
     {
         private Quanzhen db = new Quanzhen();
 
         // GET: DISCOUNTs
-        [BasicAuth]
         public ActionResult Index()
         {
             return View(db.DISCOUNT.ToList());
         }
 
         // GET: DISCOUNTs/Details/5
-        [BasicAuth]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -43,7 +42,6 @@ namespace QuanzhenCinema.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [BasicAuth]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "DISCOUNT_ID,RATE,NUM,START_DATE,REMAINING_DAY,DESCRIPTION")] DISCOUNT dISCOUNT)
         {
@@ -58,7 +56,6 @@ namespace QuanzhenCinema.Controllers
         }
 
         // GET: DISCOUNTs/Edit/5
-        [BasicAuth]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -77,9 +74,8 @@ namespace QuanzhenCinema.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [BasicAuth]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "DISCOUNT_ID,RATE,NUM,START_DATE,REMAINING_DAY,DECRIPTION")] DISCOUNT dISCOUNT)
+        public ActionResult Edit([Bind(Include = "ID,RATE,NUM,START_DATE,REMAINING_DAY,DECRIPTION")] DISCOUNT dISCOUNT)
         {
             if (ModelState.IsValid)
             {
