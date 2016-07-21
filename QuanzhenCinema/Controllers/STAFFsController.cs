@@ -17,7 +17,7 @@ namespace QuanzhenCinema.Controllers
         // GET: STAFFs
         public ActionResult Index()
         {
-            return View(db.STAFF.ToList());
+            return View(db.STAFF.ToList().OrderBy(i=> i.ID));
         }
 
         // GET: STAFFs/Details/5
