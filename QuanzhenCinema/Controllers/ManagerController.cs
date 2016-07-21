@@ -10,16 +10,21 @@ namespace QuanzhenCinema.Controllers
 {
     public class ManagerController : Controller
     {
-        private Quanzhen db;
+        //private Quanzhen db;
         // GET: Manager
         [BasicAuth]
-        public ActionResult index(){
-            db=new Quanzhen();
-            Business.Management m=new Management();
+        public ActionResult index()
+        {
+            //db=new Quanzhen();
+            Business.Management m = new Management();
             ViewBag.movie_count = m.getMovieCount();
             ViewBag.discount_count = m.getDiscountCount();
             ViewBag.staff_count = m.getStaffCount();
             ViewBag.member_count = m.getMemberCount();
+            ViewBag.ticket_rate = m.getBarChartInfo();
+            ViewBag.date_rate = m.getLineChartInfo("惊天魔盗团2");
+            ViewBag.source_rate = m.getPieChartInfo();
+            ViewBag.total_ticket = m.getChartInfo();
             return View(ViewBag);
         }
 

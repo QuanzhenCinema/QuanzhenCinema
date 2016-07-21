@@ -57,7 +57,6 @@ namespace QuanzhenCinema.Business{
             DateTime temp = d.AddDays(1);
             String sql = "Select schedule_id,display_id,hall_id,original_price,start_time,end_time from schedule natural join display where movie_id=" + movie_id + " and start_time>to_date('" + d.Year + '-' + d.Month + '-' + d.Day + "','YYYY-MM-DD') and end_time<to_date('" + temp.Year + '-' + temp.Month + '-' + temp.Day + "','YYYY-MM-DD')";
             List<Schedule_ViewModel> schedule = db.Database.SqlQuery<Schedule_ViewModel>(sql).ToList();
-            
             return schedule;
         }
 
