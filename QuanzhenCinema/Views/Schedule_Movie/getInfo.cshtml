@@ -88,11 +88,11 @@
 
             //// uncomment this line to hide the all-day slot
             resources: [
-                { id: '1', title: 'Hall 1', eventColor: '#00ABDE'},
-                { id: '2', title: 'Hall 2', eventColor: '#00C4A8' },
-                { id: '3', title: 'Hall 3', eventColor: '#F9EC68' },
-                { id: '4', title: 'Hall 4', eventColor: '#FF4181' },
-                { id: '5', title: 'Hall 5', eventColor: '#F0B556'}
+                { id: '1', title: 'Hall 1: 3D IMAX', eventColor: '#00ABDE'},
+                { id: '2', title: 'Hall 2 :3D' , eventColor: '#00C4A8' },
+                { id: '3', title: 'Hall 3: 2D', eventColor: '#F9EC68' },
+                { id: '4', title: 'Hall 4: 2D', eventColor: '#FF4181' },
+                { id: '5', title: 'Hall 5: 3D', eventColor: '#F0B556'}
             ],
 
             viewRender: function (view, element) {
@@ -234,23 +234,23 @@
         function initMovieList(Data) {
             document.getElementById('movieList').innerHTML = '';
             var data_display = Data.display;
-            $("#movieList").append("<tr> <th> 电影标识号 </th> <th> 电影名称 </th> <th> 时长 </th> <th> 语言 </th> <th> 档期结束时间 </th> </tr>");
+            $("#movieList").append("<tr> <th> 电影标识号 </th> <th> 电影名称 </th> <th> 时长 </th> <th> 语言/版本 </th> <th> 档期结束时间 </th> </tr>");
             for(i in data_display) {
                 var trtoappend = document.createElement('tr');
                 var name = document.createElement("td"),
                         length = document.createElement("td"),
-                        language = document.createElement("td"),
+                        language_version = document.createElement("td"),
                         expire_date = document.createElement("td"),
                         display = document.createElement("td");
                 name.innerHTML = data_display[i].Name;
                 length.innerHTML = data_display[i].LENGTH;
-                language.innerHTML = data_display[i].LANGUAGE;
+                language_version.innerHTML = data_display[i].LANGUAGE + " / " + (data_display[i].IS_3D == 0 ? "2D" : "3D") + " " + (data_display[i].IS_IMAX == 0 ? "" : "IMAX");
                 expire_date.innerHTML = new Date(parseInt(data_display[i].Expire_date.substring(6, 19)));
                 display.innerHTML = data_display[i].DISPLAY_ID;
                 trtoappend.appendChild(display);
                 trtoappend.appendChild(name);
                 trtoappend.appendChild(length);
-                trtoappend.appendChild(language);
+                trtoappend.appendChild(language_version);
                 trtoappend.appendChild(expire_date);
                 document.getElementById('movieList').appendChild(trtoappend);
             }

@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@{ 
+    var today = "getInfo/"+DateTime.Now.ToString("yyyy-MM-dd");
+}
+<!DOCTYPE html>
 
 <html>
 <head>
@@ -32,14 +35,15 @@
         <div class="navbar-default sidebar" role="navigation">
             <div class="nav logo">
                 <a href=@Url.Action("index","Home")><span><img src=@Url.Content("~/Content/images/logo.png") /> </span></a>
+                @*<p><span>当前用户： </span>@usr</p>*@
             </div>
             <div class="sidebar-nav navbar-collapse">
                 <ul class="nav" id="side-menu">
                     <li>
-                        <a href=@Url.Action("index","Manager")><i class="fa fa-dashboard fa-fw"></i>　Dashboard</a>
+                        <a href=@Url.Action("index","Manager")><i class="fa fa-dashboard fa-fw"></i>　数据总览</a>
                     </li>
                     <li>
-                        <a href=@Url.Action("getInfo/2016-07-16","Schedule_Movie")><i class="fa fa-calendar fa-fw"></i>　电影排片</a>
+                        <a href=@Url.Action(today,"Schedule_Movie")><i class="fa fa-calendar fa-fw"></i>　电影排片</a>
                     </li>
                     <li>
                         <a href=@Url.Action("Index","DISCOUNTs")><i class="fa fa-money fa-fw"></i>　折扣管理</a>

@@ -1,16 +1,17 @@
-﻿using QuanzhenCinema.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Web;
 using System.Web.Mvc;
+using QuanzhenCinema.Models;
 
 namespace QuanzhenCinema.Controllers
 {
-    public class MoviesSelectController : Controller
+    public class SearchController : Controller
     {
         Quanzhen db = new Quanzhen();
 
-        public ActionResult Index(string searchString, string id)
+        public ActionResult Search(string searchString, string id)
         {
             string sortOrder = id;
             IEnumerable<MOVIE> movies = db.MOVIE;
@@ -47,7 +48,7 @@ namespace QuanzhenCinema.Controllers
         }
 
         [HttpPost]
-        public ActionResult Index(string searchString)
+        public ActionResult Search(string searchString)
         {
             string sortOrder = "";
             IEnumerable<MOVIE> movies = db.MOVIE;
@@ -80,7 +81,8 @@ namespace QuanzhenCinema.Controllers
                     break;
             }
             ViewBag.movies = movies.ToList();
-            //       movies.ToList()[0].
+            //       movies.ToList()[0]
+           // movies.ToList()[0].
             return View(movies);
         }
     }

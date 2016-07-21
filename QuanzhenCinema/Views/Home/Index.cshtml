@@ -2,12 +2,13 @@
     Layout = "~/Views/Shared/clientLayout.cshtml";
     ViewBag.Title = "首页";
 }
-
+@section Head{
+    <link href="@Url.Content("~/Content/index.css")" rel="stylesheet">
+}
 <!DOCTYPE html>
 <html>
 <head>
     <title>全真影院-首页</title>
-    <link href="@Url.Content("~/Content/index.css")" rel="stylesheet">
 </head>
 <body>
 
@@ -54,7 +55,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-3 col-sm-3 col-xs-6">
-                        <a href="@Url.Action("description","Default")" class="thumbnail">
+                        <a href="@Url.Action("description/5045678","Default")" class="thumbnail">
                             <img alt="300x200" src="@Url.Content("~/Content/images/index/1.jpg")" />
                         </a>
                         <div class="caption">
@@ -70,7 +71,7 @@
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-3 col-xs-6">
-                        <a href="@Url.Action("description","Default")" class="thumbnail">
+                        <a href="@Url.Action("description/5045678","Default")" class="thumbnail">
                             <img alt="300x200" src="@Url.Content("~/Content/images/index/3.jpg")" />
                         </a>
                         <div class="caption">
@@ -78,7 +79,7 @@
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-3 col-xs-6">
-                        <a href="@Url.Action("description","Default")" class="thumbnail">
+                        <a href="@Url.Action("description/20505982","Default")" class="thumbnail">
                             <img alt="300x200" src="@Url.Content("~/Content/images/index/4.jpg")" />
                         </a>
                         <div class="caption">
