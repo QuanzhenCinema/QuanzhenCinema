@@ -1,0 +1,51 @@
+﻿@{
+    Layout = "~/Views/Shared/clientLayout.cshtml";
+    ViewBag.Title = "搜索结果";
+}
+@functions{
+    public string isOnline(DateTime expireDate){
+        if (DateTime.Compare(DateTime.Now, expireDate)>0)
+        {
+            return "已经下线";
+        }
+        else
+        {
+            return "正在热映";
+        }
+    }
+}
+
+@section Head{
+    <link href="@Url.Content("~/Content/search.css")" rel="stylesheet">
+}
+        @ViewBag.searchString
+        <!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>全真影院-搜索结果</title>
+</head>
+<body>
+
+
+@foreach (var item in ViewBag.movies){
+    var link1 = "description/" + Convert.ToString(item.MOVIE_ID);
+    <div class="media">
+        <div class="col-xs-4">
+
+        </div>
+        <div class="col-xs-8">
+            <div class="media-body">
+                <a href="@Url.Action(link1,"Default")">@item.NAME</a>
+                <span class="label label-danger">@isOnline(item.EXPIRE_DATE)</span>
+                <br>
+                @item.DESCRIPTION
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xs-4">
+        <hr align=left width=770>
+    </div>
+}
+</body>
+</html>
