@@ -539,6 +539,7 @@
     <Content Include="Content\index.css" />
     <Content Include="Content\input.css" />
     <Content Include="Content\jquery.seat-charts.css" />
+    <Content Include="Content\jquery.spinner.css" />
     <Content Include="Content\jquery\dist\jquery.js" />
     <Content Include="Content\jquery\dist\jquery.min.js" />
     <Content Include="Content\jquery\MIT-LICENSE.txt" />
@@ -688,7 +689,12 @@
     <Content Include="Content\raphael\raphael.js" />
     <Content Include="Content\scheduler.min.css" />
     <Content Include="Content\search.css" />
+    <Content Include="Content\seat-sale-hall1.css" />
+    <Content Include="Content\seat-sale-hall2.css" />
+    <Content Include="Content\seat-sale-hall3.css" />
+    <Content Include="Content\seat-sale-hall5.css" />
     <Content Include="Content\seat.css" />
+    <Content Include="Content\snacks.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -962,6 +968,7 @@
     <Content Include="Scripts\jquery.min.js" />
     <Content Include="Scripts\jquery.seat-charts.js" />
     <Content Include="Scripts\jquery.seat-charts.min.js" />
+    <Content Include="Scripts\jquery.spinner.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />

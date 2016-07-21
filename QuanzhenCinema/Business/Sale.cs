@@ -61,10 +61,15 @@ namespace QuanzhenCinema.Business{
             return schedule;
         }
 
-        public List<Seat_ViewModel> getSeats(){
-            String sql = "select COLUMN_ID,ROW_ID,HALL_ID from schedule natural join seat where schedule_id = " + schedule_id;
-            List<Seat_ViewModel> seats = db.Database.SqlQuery<Seat_ViewModel>(sql).ToList();
+        public List<String> getSeats(){
+            String sql = "select * from ticket where schedule_id=" + schedule_id;
+            List<TICKET> ticket = db.Database.SqlQuery<TICKET>(sql).ToList();
+            List<String> seats = new List<string>();
 
+            for (int i = 0; i < ticket.Count; i++)
+            {
+                seats.Add(ticket[i].SEAT_ROW_ID + "_" + ticket[i].SEAT_COLUMN_ID);
+            }
             return seats;
         }
     }
